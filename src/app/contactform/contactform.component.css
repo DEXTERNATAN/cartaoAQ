@@ -1,0 +1,14 @@
+.contact-form input[type="text"]{ 
+    background-image:none;
+}
+#contact-page .ng-pristine {
+    border-color:yellow;
+}
+
+#contact-page .ng-touched.ng-invalid {
+    border-color:red;
+}
+
+#contact-page .ng-touched.ng-valid {
+    border-color:green;
+}

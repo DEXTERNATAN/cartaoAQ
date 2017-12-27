@@ -10,21 +10,26 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routes';
 import { CorporativoComponent } from './corporativo/corporativo.component';
- 
-
+import { ContactformComponent } from './contactform/contactform.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CorporativoComponent
+    CorporativoComponent,
+    ContactformComponent
   ],
   imports: [
     BrowserModule,
     AlertModule.forRoot(),
     CarouselModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
