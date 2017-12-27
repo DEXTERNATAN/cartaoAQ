@@ -10,6 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routes';
 import { CorporativoComponent } from './corporativo/corporativo.component';
+import { SobreComponent } from './sobre/sobre.component';
+import { LancamentosComponent } from './lancamentos/lancamentos.component';
+import { CartoesComponent } from './cartoes/cartoes.component';
  
 
 @NgModule({
@@ -18,7 +21,10 @@ import { CorporativoComponent } from './corporativo/corporativo.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CorporativoComponent
+    CorporativoComponent,
+    SobreComponent,
+    LancamentosComponent,
+    CartoesComponent
   ],
   imports: [
     BrowserModule,
