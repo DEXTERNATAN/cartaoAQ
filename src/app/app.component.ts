@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  onActivate(e, scrollContainer) {
+    // scrollContainer.scrollTop = 0;
+    // document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  }
+
 }

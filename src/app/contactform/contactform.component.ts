@@ -12,7 +12,6 @@ import { SendMailService } from '../send-mail.service';
 })
 export class ContactformComponent implements OnInit {
 
-
   contactForm: FormGroup;
   post: any;
   errorMessage: any;
@@ -25,6 +24,7 @@ export class ContactformComponent implements OnInit {
     });
 
   }
+
 
 
   onSubmit() {
