@@ -32,8 +32,7 @@ import { ContratoComponent } from './contrato/contrato.component';
     ContactformComponent,
     SobreComponent,
     LancamentosComponent,
-    contact-component
-    CartoesComponent
+    ContactformComponent,
     CartoesComponent,
     ContratoComponent
   ],

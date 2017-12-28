@@ -1,6 +1,5 @@
 <br />
 <section class="well container">
-
 	<div>
 		<div class="breadcrumbs">
 			<ol class="breadcrumb">
@@ -18,8 +17,7 @@
 					<div class="alert alert-danger" role="alert">
 					  <strong>Ops, ocorreu algo errado!</strong> mas nao se preocupe, ainda podera entrar em contato conosco atraves do email: xxx@gmail.com.
 					</div>
-			</div>    
-					  
+			</div>
 			<div class="row">  	
 				<div class="col-sm-8">
 					<div class="contact-form">
@@ -75,75 +73,4 @@
 		</div>	
 		<!-- FIM  -->
 	</div>
-  <div>
-    <div class="breadcrumbs">
-      <ol class="breadcrumb">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li class="active">Contato</li>
-      </ol>
-    </div>
-    <div id="contact-page" class="container">
-      <div>&nbsp;</div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="contact-form">
-            <h2 class="title text-center">ENTRE EM CONTATO</h2>
-            <div class="status alert alert-success" style="display: none"></div>
-            <form class="contact-form row" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate >
-              <div class="form-group col-md-6">
-                <input type="text" class="form-control" formControlName="name" required placeholder="Nome">
-              </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" formControlName="email" required placeholder="Email">
-              </div>
-              <div class="form-group col-md-12">
-                <input type="text" class="form-control" formControlName="subject" required placeholder="Objetivo">
-              </div>
-              <div class="form-group col-md-12">
-                <textarea class="form-control" formControlName="message" rows="8" placeholder="Mensagem"></textarea>
-              </div>
-              <div class="form-group col-md-12">
-                <button type="submit" name="submit" [disabled]="!contactForm.valid" class="btn btn-primary pull-right">Enviar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="contact-info">
-            <h2 class="title text-center">Informações</h2>
-            <address>
-              <p>Cartão Aqui Inc.</p>
-              <p>Rio de Janeiro, Rj</p>
-              <p>Fone: 21 xxxx xxxx</p>
-              <p>Fax: x-xxx xxx xxxx</p>
-              <p>Email: info@cartaoaqui.com</p>
-            </address>
-            <div class="social-networks">
-              <h2 class="title text-center">Social</h2>
-              <ul>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- FIM  -->
-  </div>
 </section>
