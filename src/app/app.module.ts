@@ -10,10 +10,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routes';
 import { CorporativoComponent } from './corporativo/corporativo.component';
+
 import { ContactformComponent } from './contactform/contactform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SendMailService } from './send-mail.service';
+import { SobreComponent } from './sobre/sobre.component';
+import { LancamentosComponent } from './lancamentos/lancamentos.component';
+import { CartoesComponent } from './cartoes/cartoes.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,9 @@ import { SendMailService } from './send-mail.service';
     HomeComponent,
     CorporativoComponent,
     ContactformComponent,
+    SobreComponent,
+    LancamentosComponent,
+    CartoesComponent
   ],
   imports: [
     BrowserModule,
