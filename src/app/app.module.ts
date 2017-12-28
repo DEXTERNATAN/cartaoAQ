@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ScrollToModule } from 'ng2-scroll-to';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -36,6 +37,7 @@ import { ContratoComponent } from './contrato/contrato.component';
     BrowserModule,
     AlertModule.forRoot(),
     CarouselModule.forRoot(),
+    ScrollToModule.forRoot(),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
