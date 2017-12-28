@@ -13,6 +13,8 @@ import { CorporativoComponent } from './corporativo/corporativo.component';
 import { ContactformComponent } from './contactform/contactform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { SendMailService } from './send-mail.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import { HttpModule } from '@angular/http';
     FooterComponent,
     HomeComponent,
     CorporativoComponent,
-    ContactformComponent
+    ContactformComponent,
   ],
   imports: [
     BrowserModule,

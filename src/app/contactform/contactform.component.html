@@ -9,7 +9,17 @@
 			</ol>
 		</div>
 		<div id="contact-page" class="container">
-			<div>&nbsp;</div>    	
+			<div class="row" *ngIf="post;" >
+			  <div class="alert alert-success" role="alert">
+				<strong>Muito legal!</strong> Seu email foi enviado com sucesso, em breve entraremos em contato.
+			  </div>
+			</div>    
+			<div class="row" *ngIf="errorMessage;" >
+					<div class="alert alert-danger" role="alert">
+					  <strong>Ops, ocorreu algo errado!</strong> mas nao se preocupe, ainda podera entrar em contato conosco atraves do email: xxx@gmail.com.
+					</div>
+			</div>    
+					  
 			<div class="row">  	
 				<div class="col-sm-8">
 					<div class="contact-form">
@@ -26,11 +36,11 @@
 								<input type="text"  class="form-control" formControlName="subject" required placeholder="Objetivo">
 							</div>
 							<div class="form-group col-md-12">
-								<textarea   class="form-control" formControlName="message" rows="8" placeholder="Mensagem"></textarea>
+								<textarea  id="message" class="form-control" formControlName="message" rows="8" placeholder="Mensagem"></textarea>
+								<small id="messageHelp" class="form-text text-muted">A mensagem deve ter no minimo 50 caracteres e no maximo 500. Caracters digitados:{{message.length}}</small>
 							</div>                        
 							<div class="form-group col-md-12">
-								{{contactForm.invalid}}
-								<button type="submit" name="submit" [disabled]="contactForm.invalid"  class="btn btn-primary pull-right"  >Enviar</button>
+								<input type="submit" name="submit" [disabled]="contactForm.invalid"  class="btn btn-primary pull-right" value="Enviar" />
 							</div>
 						</form>
 					</div>
