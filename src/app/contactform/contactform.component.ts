@@ -9,10 +9,7 @@ import { Subject } from 'rxjs/Subject';
 })
 export class ContactformComponent implements OnInit {
 
-
   contactForm: FormGroup;
-
-
   post: any;
 
   constructor(private builder: FormBuilder) {
@@ -25,8 +22,6 @@ export class ContactformComponent implements OnInit {
     });
 
   }
-
-
 
   onSubmit() {
     console.log(this.contactForm);

@@ -10,14 +10,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routes';
 import { CorporativoComponent } from './corporativo/corporativo.component';
-
 import { ContactformComponent } from './contactform/contactform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SobreComponent } from './sobre/sobre.component';
 import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
- 
+import { ContratoComponent } from './contrato/contrato.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +25,11 @@ import { CartoesComponent } from './cartoes/cartoes.component';
     FooterComponent,
     HomeComponent,
     CorporativoComponent,
-
-    ContactformComponent
-
+    ContactformComponent,
     SobreComponent,
     LancamentosComponent,
-    CartoesComponent
+    CartoesComponent,
+    ContratoComponent
 
   ],
   imports: [
