@@ -14,10 +14,13 @@ import { CorporativoComponent } from './corporativo/corporativo.component';
 import { ContactformComponent } from './contactform/contactform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { SendMailService } from './send-mail.service';
 import { SobreComponent } from './sobre/sobre.component';
 import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
+
 import { ContratoComponent } from './contrato/contrato.component';
+
 
 @NgModule({
   declarations: [
@@ -29,9 +32,10 @@ import { ContratoComponent } from './contrato/contrato.component';
     ContactformComponent,
     SobreComponent,
     LancamentosComponent,
+    contact-component
+    CartoesComponent
     CartoesComponent,
     ContratoComponent
-
   ],
   imports: [
     BrowserModule,
