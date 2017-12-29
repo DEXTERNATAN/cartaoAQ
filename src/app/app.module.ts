@@ -20,8 +20,9 @@ import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
 
 import { ContratoComponent } from './contrato/contrato.component';
-import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
+import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,10 @@ import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
     LancamentosComponent,
     CartoesComponent,
     ContratoComponent,
+    ContactformComponent,
+    CartoesComponent,
+    ContratoComponent,
+    ConfigCartaoComponent
   ],
   imports: [
     BrowserModule,

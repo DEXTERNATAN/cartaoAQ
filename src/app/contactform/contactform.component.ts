@@ -15,6 +15,8 @@ export class ContactformComponent implements OnInit {
   contactForm: FormGroup;
   post: any;
   errorMessage: any;
+  message: any;
+
   constructor(private builder: FormBuilder, private sdmail: SendMailService) {
     this.contactForm = builder.group({
       name: [null, Validators.required],

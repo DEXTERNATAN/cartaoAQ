@@ -9,11 +9,21 @@ import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
 import { ContratoComponent } from './contrato/contrato.component';
 import { SobreComponent } from './sobre/sobre.component';
-
+import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent , data: { breadcrumbs: true, text: ''}},
   { path: 'home', component: HomeComponent, data: { breadcrumbs: 'home'}},
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'corporativo', component: CorporativoComponent },
+  { path: 'contato', component: ContactformComponent},
+  { path: 'lancamentos', component: LancamentosComponent },
+  { path: 'cartoes', component: CartoesComponent },
+  { path: 'contrato', component: ContratoComponent },
+  { path: 'configCartao', component: ConfigCartaoComponent },
+  { path: 'sobre', component: SobreComponent },
+
 ];
 const routesChild: Routes = [
   { path: '', data: { breadcrumbs: 'Pagina Inicial'}, children: [
