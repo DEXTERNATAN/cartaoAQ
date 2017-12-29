@@ -20,6 +20,7 @@ import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
 
 import { ContratoComponent } from './contrato/contrato.component';
+import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ContratoComponent } from './contrato/contrato.component';
     LancamentosComponent,
     ContactformComponent,
     CartoesComponent,
-    ContratoComponent
+    ContratoComponent,
+    ConfigCartaoComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
 import { ContratoComponent } from './contrato/contrato.component';
 import { SobreComponent } from './sobre/sobre.component';
-
+import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'lancamentos', component: LancamentosComponent },
   { path: 'cartoes', component: CartoesComponent },
   { path: 'contrato', component: ContratoComponent },
+  { path: 'configCartao', component: ConfigCartaoComponent },
   { path: 'sobre', component: SobreComponent },
 
 ];
