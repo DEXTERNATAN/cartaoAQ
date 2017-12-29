@@ -20,6 +20,7 @@ import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
 
 import { ContratoComponent } from './contrato/contrato.component';
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
 
 @NgModule({
@@ -32,10 +33,8 @@ import { ContratoComponent } from './contrato/contrato.component';
     ContactformComponent,
     SobreComponent,
     LancamentosComponent,
-    contact-component
-    CartoesComponent
     CartoesComponent,
-    ContratoComponent
+    ContratoComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +44,8 @@ import { ContratoComponent } from './contrato/contrato.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    McBreadcrumbsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

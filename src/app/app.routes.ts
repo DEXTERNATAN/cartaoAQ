@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CorporativoComponent } from './corporativo/corporativo.component';
@@ -13,19 +13,20 @@ import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'corporativo', component: CorporativoComponent },
-  { path: 'contato', component: ContactformComponent},
-  { path: 'lancamentos', component: LancamentosComponent },
-  { path: 'cartoes', component: CartoesComponent },
-  { path: 'contrato', component: ContratoComponent },
-  { path: 'sobre', component: SobreComponent },
+  { path: 'home', component: HomeComponent, data: { breadcrumbs: 'home'}},
+  { path: 'corporativo', component: CorporativoComponent, data: { breadcrumbs: 'corporativo'} },
+  { path: 'contato', component: ContactformComponent, data: { breadcrumbs: 'contato'}},
+  { path: 'lancamentos', component: LancamentosComponent, data: { breadcrumbs: 'lancamentos'} },
+  { path: 'cartoes', component: CartoesComponent, data: { breadcrumbs: 'cartoes'}  },
+  { path: 'contrato', component: ContratoComponent, data: { breadcrumbs: 'contrato'} },
+  { path: 'sobre', component: SobreComponent, data: { breadcrumbs: 'sobre'} },
 
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    McBreadcrumbsModule.forRoot()
   ],
   exports: [
     RouterModule
