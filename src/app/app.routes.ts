@@ -12,21 +12,26 @@ import { SobreComponent } from './sobre/sobre.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent , data: { breadcrumbs: true, text: ''}},
   { path: 'home', component: HomeComponent, data: { breadcrumbs: 'home'}},
+];
+const routesChild: Routes = [
+  { path: '', data: { breadcrumbs: 'Pagina Inicial'}, children: [
   { path: 'corporativo', component: CorporativoComponent, data: { breadcrumbs: 'corporativo'} },
   { path: 'contato', component: ContactformComponent, data: { breadcrumbs: 'contato'}},
   { path: 'lancamentos', component: LancamentosComponent, data: { breadcrumbs: 'lancamentos'} },
   { path: 'cartoes', component: CartoesComponent, data: { breadcrumbs: 'cartoes'}  },
   { path: 'contrato', component: ContratoComponent, data: { breadcrumbs: 'contrato'} },
   { path: 'sobre', component: SobreComponent, data: { breadcrumbs: 'sobre'} },
-
+ ]}
 ];
+
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    McBreadcrumbsModule.forRoot()
+    McBreadcrumbsModule.forRoot(),
+    RouterModule.forChild(routesChild)
   ],
   exports: [
     RouterModule
