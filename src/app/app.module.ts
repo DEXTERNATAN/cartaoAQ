@@ -20,8 +20,9 @@ import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
 
 import { ContratoComponent } from './contrato/contrato.component';
-import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
+import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
     ContactformComponent,
     SobreComponent,
     LancamentosComponent,
+    CartoesComponent,
+    ContratoComponent,
     ContactformComponent,
     CartoesComponent,
     ContratoComponent,
@@ -46,7 +49,8 @@ import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    McBreadcrumbsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

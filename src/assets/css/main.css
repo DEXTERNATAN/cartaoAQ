@@ -1537,10 +1537,13 @@ h2.title {
   position: relative;
 }
 
+
 .breadcrumbs .breadcrumb {
-  background:transparent;
+  background: transparent;
   margin-bottom: 75px;
   padding-left: 0;
+  width: 86.5%;
+  margin: 14px auto;
 }
 
 .breadcrumbs .breadcrumb li a {
@@ -1549,21 +1552,12 @@ h2.title {
   padding: 3px 7px;
 }
 
-.breadcrumbs .breadcrumb li a:after {
-  content:"";
-  height:auto;
-  width: auto;
-  border-width: 8px;
-  border-style: solid;
-  border-color:transparent transparent transparent #64B1FF;
-  position: absolute;
-  top: 11px;
-  left:48px;
-
-}
 
 .breadcrumbs .breadcrumb > li + li:before {
-  content: " ";
+  content: "\f0da";
+  font: normal normal normal 22px/1 FontAwesome;
+  color: #64B1FF;
+  vertical-align: middle;
 }
 
 #cart_items .cart_info {
