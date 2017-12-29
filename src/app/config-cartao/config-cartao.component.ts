@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigCartaoComponent implements OnInit {
 
+  public pnlVisivel = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  enviarArte() {
+    this.pnlVisivel = true;
   }
 
 }

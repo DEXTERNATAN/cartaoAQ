@@ -83,7 +83,7 @@
                                     <div class="brands_products">
                                       <span class="h4">
                                         <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " onclick="nuevapagina('contrato.html')" type="radio"> Enviar minha arte</span>
+  border: 2px solid #7396FF; " type="radio" (click)="enviarArte()"> Enviar minha arte</span>
                                     </div>
                                   </div>
                                 </div>
@@ -135,13 +135,13 @@
                     <div class="contact-form">
                       <table class="header-bottom  table-condensed" width="100%" cellspacing="6" cellpadding="0" border="0">
                         <tbody>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="alert-success">
                               <h3 class="text-info">
                                 <img src="/assets/images/home/okverde.fw.png" width="81" height="68">FORMATO</h3>
                             </td>
                           </tr>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="Bgbranco">
                               <div class="col-sm-3">
                                 <div class="product-image-wrapper">
@@ -219,13 +219,13 @@
                     <div class="contact-form">
                       <table class="header-bottom  table-condensed" width="100%" cellspacing="6" cellpadding="0" border="0">
                         <tbody>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="alert-success">
                               <h3 class="text-info">
                                 <img src="/assets/images/home/okverde.fw.png" width="81" height="68">IMPRESSÃO</h3>
                             </td>
                           </tr>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="Bgbranco">
                               <div class="col-sm-3">
                                 <div class="product-image-wrapper">
@@ -266,13 +266,13 @@
                     <div class="contact-form">
                       <table class="header-bottom  table-condensed" width="100%" cellspacing="6" cellpadding="0" border="0">
                         <tbody>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="alert-success">
                               <h3 class="text-info">
                                 <img src="/assets/images/home/okverde.fw.png" width="81" height="68">PAPEL</h3>
                             </td>
                           </tr>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="Bgbranco">
                               <div class="col-sm-3">
                                 <div class="product-image-wrapper">
@@ -397,13 +397,13 @@
                     <div class="contact-form">
                       <table class="header-bottom  table-condensed" width="100%" cellspacing="6" cellpadding="0" border="0">
                         <tbody>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="alert-success">
                               <h3 class="text-info">
                                 <img src="/assets/images/home/okverde.fw.png" width="81" height="68">ENOBRECIMENTO</h3>
                             </td>
                           </tr>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="Bgbranco">
                               <div class="col-sm-3">
                                 <div class="product-image-wrapper">
@@ -465,16 +465,16 @@
               <div id="contact-page" class="container">
                 <div class="row">
                   <div class="col-sm-9">
-                    <div class="contact-form">
+                    <div class="contact-form" *ngIf="pnlVisivel">
                       <table class="header-bottom  table-condensed" width="100%" cellspacing="6" cellpadding="0" border="0">
                         <tbody>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="alert-success">
                               <h3 class="text-info">
                                 <img src="/assets/images/home/okverde.fw.png" width="81" height="68">EXTRAS</h3>
                             </td>
                           </tr>
-                          <tr>
+                          <tr *ngIf="pnlVisivel">
                             <td class="Bgbranco">
                               <div class="col-sm-3">
                                 <div class="product-image-wrapper">
@@ -518,7 +518,7 @@
                 </h3>
               </div>
               <div class="&nbsp;">&nbsp;</div>
-              <div id="contact-page" class="container">
+              <div id="contact-page" class="container" *ngIf="pnlVisivel">
                 <div class="row">
                   <div class="col-sm-9">
                     <div class="contact-form">
@@ -581,7 +581,7 @@
               </div>
               <div>&nbsp;</div>
               <!-- INICIO DA TABELA DE PRECOS -->
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="pnlVisivel">
                 <form name="form1" method="post" action="">
                   <table class="breadcrumb" width="100%" height="550" cellspacing="15" cellpadding="15">
                     <tbody>
@@ -804,7 +804,7 @@
             </td>
           </tr>
           <tr>
-            <td>
+            <td *ngIf="pnlVisivel">
               <div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img src="/assets/images/home/warning-icon-hi (1).png" width="20" height="20">&nbsp;
@@ -821,12 +821,12 @@
                 <br>
 
                 <a href="Config-Cartao-EnviarArte.html">
-                  <button class="alert btn-info">
+                  <button class="alert btn-info" [ngClass]="{'btnEnable': pnlVisivel, 'btnDisable': !pnlVisivel}"  [disabled]="true">
                     <span>Continuar</span>
                   </button>
                 </a>
               </div>
-              <div>
+              <div *ngIf="pnlVisivel">
                 <a href="#">
                   <button class="alert btn-primary">
                     <span>
