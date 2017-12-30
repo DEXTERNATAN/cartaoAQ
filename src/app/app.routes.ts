@@ -22,7 +22,7 @@ const routesChild: Routes = [
   { path: 'lancamentos', component: LancamentosComponent, data: { breadcrumbs: 'lancamentos'} },
   { path: 'cartoes', component: CartoesComponent, data: { breadcrumbs: 'cartoes'}  },
   { path: 'contrato', component: ContratoComponent, data: { breadcrumbs: 'contrato'} },
-  { path: 'configCartao', component: ConfigCartaoComponent },
+  { path: 'configCartao', component: ConfigCartaoComponent, data: { breadcrumbs: 'Configurar cartao'}  },
   { path: 'sobre', component: SobreComponent, data: { breadcrumbs: 'sobre'} },
  ]}
 ];
