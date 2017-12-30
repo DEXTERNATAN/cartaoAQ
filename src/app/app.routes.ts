@@ -10,6 +10,7 @@ import { CartoesComponent } from './cartoes/cartoes.component';
 import { ContratoComponent } from './contrato/contrato.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent , data: { breadcrumbs: true, text: ''}},
@@ -23,6 +24,7 @@ const routesChild: Routes = [
   { path: 'cartoes', component: CartoesComponent, data: { breadcrumbs: 'Cartão de Visita'}},
   { path: 'contrato', component: ContratoComponent, data: { breadcrumbs: 'contrato'} },
   { path: 'sobre', component: SobreComponent, data: { breadcrumbs: 'sobre'} },
+  { path: 'cart', component: CartComponent, data: { breadcrumbs: 'carrinho de compras'} },
   { path: 'cartoes', data: { breadcrumbs: 'Cartão de Visita'}, children: [
     { path: '', redirectTo: 'configCartao', pathMatch: 'prefix' },
     { path: ':id', component: ConfigCartaoComponent, data: { breadcrumbs: 'Configurar cartao'}  },

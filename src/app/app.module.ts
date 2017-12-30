@@ -23,6 +23,7 @@ import { ContratoComponent } from './contrato/contrato.component';
 
 import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
     ContactformComponent,
     CartoesComponent,
     ContratoComponent,
-    ConfigCartaoComponent
+    ConfigCartaoComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
