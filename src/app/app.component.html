@@ -1,5 +1,14 @@
 <app-header></app-header>
 <div class="main-container" #scrollContainer>
-  <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+  <section class="container">
+    
+
+    <div class="breadcrumbs">
+      <mc-breadcrumbs></mc-breadcrumbs>
+    </div>
+    <div class="row">
+        <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+    </div>
+  </section>
 </div>
 <app-footer></app-footer>

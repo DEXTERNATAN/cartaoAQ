@@ -1539,11 +1539,10 @@ h2.title {
 
 
 .breadcrumbs .breadcrumb {
-  background: transparent;
-  margin-bottom: 75px;
-  padding-left: 0;
-  width: 86.5%;
-  margin: 14px auto;
+    background: transparent;
+    margin-bottom: 0px;
+    padding-left: 0;
+    margin: 19px 0px 12px -15px;
 }
 
 .breadcrumbs .breadcrumb li a {

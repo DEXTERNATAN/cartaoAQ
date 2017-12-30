@@ -20,11 +20,14 @@ const routesChild: Routes = [
   { path: 'corporativo', component: CorporativoComponent, data: { breadcrumbs: 'corporativo'} },
   { path: 'contato', component: ContactformComponent, data: { breadcrumbs: 'contato'}},
   { path: 'lancamentos', component: LancamentosComponent, data: { breadcrumbs: 'lancamentos'} },
-  { path: 'cartoes', component: CartoesComponent, data: { breadcrumbs: 'cartoes'}  },
+  { path: 'cartoes', component: CartoesComponent, data: { breadcrumbs: 'Cartão de Visita'}},
   { path: 'contrato', component: ContratoComponent, data: { breadcrumbs: 'contrato'} },
-  { path: 'configCartao', component: ConfigCartaoComponent, data: { breadcrumbs: 'Configurar cartao'}  },
   { path: 'sobre', component: SobreComponent, data: { breadcrumbs: 'sobre'} },
- ]}
+  { path: 'cartoes', data: { breadcrumbs: 'Cartão de Visita'}, children: [
+    { path: '', redirectTo: 'configCartao', pathMatch: 'prefix' },
+    { path: ':id', component: ConfigCartaoComponent, data: { breadcrumbs: 'Configurar cartao'}  },
+]},
+]},
 ];
 
 
