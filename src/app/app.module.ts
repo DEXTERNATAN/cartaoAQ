@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+/* Modulo externos */
 import { AlertModule } from 'ngx-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ScrollToModule } from 'ng2-scroll-to';
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
+/* Componentes do projeto */
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,16 +17,17 @@ import { CorporativoComponent } from './corporativo/corporativo.component';
 import { ContactformComponent } from './contactform/contactform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { SendMailService } from './send-mail.service';
 import { SobreComponent } from './sobre/sobre.component';
 import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { CartoesComponent } from './cartoes/cartoes.component';
-
 import { ContratoComponent } from './contrato/contrato.component';
-
-import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 import { CartComponent } from './cart/cart.component';
+
+/* Services do projeto */
+import { ConfigCartaoService } from './shared/services/configCartao.service';
+import { SendMailService } from './send-mail.service';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +58,7 @@ import { CartComponent } from './cart/cart.component';
     HttpModule,
     McBreadcrumbsModule
   ],
-  providers: [],
+  providers: [ ConfigCartaoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

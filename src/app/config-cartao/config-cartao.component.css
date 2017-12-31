@@ -27,3 +27,12 @@
   display: block;
   font-weight: 700;
 }
+
+.input-formato {
+  width: 2.0em;
+  height: 2.0em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align:middle;
+  border: 2px solid #7396FF;
+}

@@ -76,8 +76,7 @@
                                   <img src="/assets/images/home/Enviar.fw.png">
                                   <div class="brands_products">
                                     <span class="h4">
-                                      <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio" (click)="enviarArte()"> Enviar minha arte</span>
+                                      <input class="input-formato" type="radio" (click)="enviarArte(true)"> Enviar minha arte</span>
                                   </div>
                                 </div>
                               </div>
@@ -87,8 +86,7 @@
                                   <img src="/assets/images/home/online.fw.png">
                                   <div class="brands_products">
                                     <span class="h4">
-                                      <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " onclick="nuevapagina('contrato.html')" type="radio"> Criar On-line</span>
+                                      <input class="input-formato" onclick="nuevapagina('contrato.html')" type="radio"> Criar On-line</span>
                                   </div>
                                 </div>
                               </div>
@@ -98,12 +96,10 @@
                                   <img src="/assets/images/home/Cdesinger.fw.png">
                                   <div class="brands_products">
                                     <span class="h4">
-                                      <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " onclick="nuevapagina('contrato.html')" type="radio"> Contratar Criação</span>
+                                      <input class="input-formato" onclick="nuevapagina('contrato.html')" type="radio"> Contratar Criação</span>
                                   </div>
                                 </div>
                               </div>
-
                             </form>
                           </td>
                         </tr>
@@ -122,7 +118,8 @@
                 <img src="/assets/images/home/dois.jpg" width="40" height="40">&nbsp; SELECIONE AS OPÇÕES
               </h3>
             </div>
-            <div class="&nbsp;">&nbsp;</div>
+
+            <!-- Dados do formato con Angular -->
             <div id="contact-page" class="container">
               <div class="row">
                 <div class="col-sm-9">
@@ -137,67 +134,17 @@
                         </tr>
                         <tr *ngIf="blEnviar">
                           <td class="Bgbranco">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" *ngFor="let frmt of formatos">
                               <div class="product-image-wrapper">
                                 <div class="">
                                   <div class="text-center">
-                                    <img src="/assets/images/home/9050.jpg" alt="">
+                                    <img src="{{ frmt.pathImagem }}" alt="{{ frmt.altImage }}">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio" value="90 x 50 mm" formControlName="Formato"> &nbsp;90 x 50 mm</span>
+                                      <input class="input-formato" type="radio" value="{{ frmt.descricao}}" formControlName="Formato"> &nbsp;{{ frmt.descricao}}</span>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/5050.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio" value="50 x 50 mm" formControlName="Formato"> &nbsp;50 x 50 mm </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/8555.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="85 x 55 mm" formControlName="Formato"> &nbsp;85 x 55 mm </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/8050.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " value="80 x 50 mm" type="radio" formControlName="Formato"> &nbsp;80 x 50 mm </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/8555.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " value="Personalizar" type="radio" formControlName="Formato"> &nbsp; Personalizar </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
                           </td>
                         </tr>
                       </tbody>
@@ -206,7 +153,8 @@
                 </div>
               </div>
             </div>
-            <div class="&nbsp;">&nbsp;</div>
+
+            <!-- Dados da impressão com Angular -->
             <div id="contact-page" class="container">
               <div class="row">
                 <div class="col-sm-9">
@@ -221,26 +169,13 @@
                         </tr>
                         <tr *ngIf="blEnviar">
                           <td class="Bgbranco">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" *ngFor="let imp of impressao">
                               <div class="product-image-wrapper">
                                 <div class="text-center">
                                   <div class="text-center">
-                                    <img src="/assets/images/home/fbcard-frente.jpg" alt="">
+                                    <img src="{{ imp.pathImagem }}" alt="{{ imp.altImage }}">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Frente" formControlName="Impressao"> &nbsp; Frente </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/fbcard-frenteverso.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Frente e Verso" formControlName="Impressao"> &nbsp; Frente e Verso </span>
+                                      <input class="input-formato" type="radio" value="{{ imp.descricao }}" formControlName="Impressao"> &nbsp; {{ imp.descricao }} </span>
                                   </div>
                                 </div>
                               </div>
@@ -253,7 +188,8 @@
                 </div>
               </div>
             </div>
-            <div class="&nbsp;">&nbsp;</div>
+
+            <!-- Dados do papel -->
             <div id="contact-page" class="container" *ngIf="blEnviar">
               <div class="row">
                 <div class="col-sm-9">
@@ -274,8 +210,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/240g.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Offset 240g" formControlName="Papel"> &nbsp;Offset 240g </span>
+                                      <input class="input-formato" type="radio" value="Offset 240g" formControlName="Papel"> &nbsp;Offset 240g </span>
                                   </div>
                                 </div>
                               </div>
@@ -286,8 +221,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/240gg.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Reciclato 240g" formControlName="Papel"> &nbsp;Reciclato 240g </span>
+                                      <input class="input-formato" type="radio" value="Reciclato 240g" formControlName="Papel"> &nbsp;Reciclato 240g </span>
                                   </div>
                                 </div>
                               </div>
@@ -298,8 +232,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/250.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Couché Brilho 250g" formControlName="Papel"> &nbsp;Couché Brilho 250g </span>
+                                      <input class="input-formato" type="radio" value="Couché Brilho 250g" formControlName="Papel"> &nbsp;Couché Brilho 250g </span>
                                   </div>
                                 </div>
                               </div>
@@ -310,8 +243,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/250fg.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Couché Fosco 250g" formControlName="Papel"> &nbsp;Couché Fosco 250g </span>
+                                      <input class="input-formato" type="radio" value="Couché Fosco 250g" formControlName="Papel"> &nbsp;Couché Fosco 250g </span>
                                   </div>
                                 </div>
                               </div>
@@ -322,8 +254,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/250fg.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Couché Brilho 300g" formControlName="Papel"> &nbsp; Couché Brilho 300g </span>
+                                      <input class="input-formato" type="radio" value="Couché Brilho 300g" formControlName="Papel"> &nbsp; Couché Brilho 300g </span>
                                   </div>
                                 </div>
                               </div>
@@ -334,8 +265,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/250fg.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Couché Fosco 300g" formControlName="Papel"> &nbsp;Couché Fosco 300g </span>
+                                      <input class="input-formato" type="radio" value="Couché Fosco 300g" formControlName="Papel"> &nbsp;Couché Fosco 300g </span>
                                   </div>
                                 </div>
                               </div>
@@ -346,8 +276,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/250fg.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Couché Brilho 350g" formControlName="Papel"> &nbsp;Couché Brilho 350g </span>
+                                      <input class="input-formato" type="radio" value="Couché Brilho 350g" formControlName="Papel"> &nbsp;Couché Brilho 350g </span>
                                   </div>
                                 </div>
                               </div>
@@ -358,8 +287,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/250fg.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Couché Fosco 350g" formControlName="Papel"> &nbsp;Couché Fosco 350g </span>
+                                      <input class="input-formato" type="radio" value="Couché Fosco 350g" formControlName="Papel"> &nbsp;Couché Fosco 350g </span>
                                   </div>
                                 </div>
                               </div>
@@ -370,8 +298,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/250fg.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Silverprint 330g" formControlName="Papel"> &nbsp; Silverprint 330g </span>
+                                      <input class="input-formato" type="radio" value="Silverprint 330g" formControlName="Papel"> &nbsp; Silverprint 330g </span>
                                   </div>
                                 </div>
                               </div>
@@ -384,7 +311,8 @@
                 </div>
               </div>
             </div>
-            <div class="&nbsp;">&nbsp;</div>
+
+            <!-- Dados do enobrecimento -->
             <div id="contact-page" class="container">
               <div class="row">
                 <div class="col-sm-9">
@@ -405,8 +333,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/laminacaofosca.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Laminação Fosca" formControlName="Enobrecimento"> &nbsp;Laminação Fosca </span>
+                                      <input class="input-formato" type="radio" value="Laminação Fosca" formControlName="Enobrecimento"> &nbsp;Laminação Fosca </span>
                                   </div>
                                 </div>
                               </div>
@@ -417,8 +344,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/laminacaobrilho.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Laminação Brilho" formControlName="Enobrecimento"> &nbsp;Laminação Brilho </span>
+                                      <input class="input-formato" type="radio" value="Laminação Brilho" formControlName="Enobrecimento"> &nbsp;Laminação Brilho </span>
                                   </div>
                                 </div>
                               </div>
@@ -429,8 +355,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/verniztotal.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Verniz UV Total" formControlName="Enobrecimento"> &nbsp;Verniz UV Total </span>
+                                      <input class="input-formato" type="radio" value="Verniz UV Total" formControlName="Enobrecimento"> &nbsp;Verniz UV Total </span>
                                   </div>
                                 </div>
                               </div>
@@ -441,8 +366,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/soft-touch.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Laminação Soft Touch" formControlName="Enobrecimento"> &nbsp;Laminação Soft Touch </span>
+                                      <input class="input-formato" type="radio" value="Laminação Soft Touch" formControlName="Enobrecimento"> &nbsp;Laminação Soft Touch </span>
                                   </div>
                                 </div>
                               </div>
@@ -455,7 +379,8 @@
                 </div>
               </div>
             </div>
-            <div class="&nbsp;">&nbsp;</div>
+
+            <!-- Dados do extra -->
             <div id="contact-page" class="container">
               <div class="row">
                 <div class="col-sm-9">
@@ -476,8 +401,7 @@
                                   <div class="text-center">
                                     <img src="/assets/images/home/laminacaofosca.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Sem Extras" formControlName="Extras"> &nbsp;Sem Extras </span>
+                                      <input class="input-formato" type="radio" value="Sem Extras" formControlName="Extras"> &nbsp;Sem Extras </span>
                                   </div>
                                 </div>
                               </div>
@@ -488,8 +412,7 @@
                                   <div class="img-responsive text-center">
                                     <img src="/assets/images/home/verniztotal.jpg" alt="">
                                     <span class="text-center text-info h4">
-                                      <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF;" type="radio" value="Laminação Brilho" formControlName="Extras"> &nbsp;Laminação Brilho </span>
+                                      <input class="input-formato" type="radio" value="Laminação Brilho" formControlName="Extras"> &nbsp;Laminação Brilho </span>
                                   </div>
                                 </div>
                               </div>
@@ -502,6 +425,7 @@
                 </div>
               </div>
             </div>
+
             <!-- INICIO DO CALCULO DO PRAZO E FRETE -->
             <div class="&nbsp;">&nbsp;</div>
             <div>
@@ -528,14 +452,12 @@
                           <td class="Bgbranco">
                             <div class="features_items" align="center">
                               <h2>
-                                <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " value="" type="radio">
+                                <input class="input-formato" value="" type="radio">
                                 <label>
                                   <span class="text-center text-info h3"> Entrega</span>
                                 </label>
 
-                                <input style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " value="" type="radio">
+                                <input class="input-formato" value="" type="radio">
                                 <label>
                                   <span class="text-center text-info h3">Retira</span>
                                 </label>
@@ -613,31 +535,26 @@
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input id="roundedOne" style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input id="roundedOne" class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input id="roundedOne" style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input id="roundedOne" class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input id="roundedOne" style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input id="roundedOne" class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
                     <tr class="shipping label-success">
                       <td class="text-info table-hover">250 un</td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
@@ -646,146 +563,121 @@
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
                     <tr>
                       <td>500 un</td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
                     <tr class="shipping label-success">
                       <td class="text-info">1.000 un</td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
                     <tr>
                       <td>2.500 un</td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class=" table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
                     <tr class="shipping label-success">
                       <td class="text-info table-hover">5.000 un</td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
                     <tr>
                       <td class="table-hover">10.000 un</td>
                       <td class="table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
                     <tr class="shipping label-success">
                       <td class="text-info table-hover">20.000 un</td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                       <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
-  border: 2px solid #7396FF; " type="radio">
+                        <input class="input-formato" type="radio">
                         <label for="radio"></label>
                       </td>
                     </tr>
@@ -815,7 +707,7 @@
               <br>
 
               <a href="Config-Cartao-EnviarArte.html">
-                <button class="alert btn-info" [ngClass]="{'btnEnable': blEnviar, 'btnDisable': !blEnviar}" [disabled]="true">
+                <button type="submit" class="alert btn-info" [ngClass]="{'btnEnable': blEnviar, 'btnDisable': !blEnviar}" [disabled]="!form.valid">
                   <span>Continuar</span>
                 </button>
               </a>
