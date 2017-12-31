@@ -9,4 +9,21 @@
   border: none;
 }
 
+.pnl-resumo {
+  padding-top: 5px;
+  padding-left: 15px;
+}
 
+.pnl-resumo-span {
+  padding-left: 15px;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.item-title {
+  font-size: 25.6px!important;
+  font-size: 1.6rem!important;
+  margin: 12px 14px;
+  display: block;
+  font-weight: 700;
+}
