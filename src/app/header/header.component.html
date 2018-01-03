@@ -77,8 +77,9 @@
             </a>
           </td> -->
           <td width="6%">
-            <a href="/cart">
+            <a [routerLink]="['cart']">
               <img src="../../assets/images/home/icocart.fw.png" width="46" height="43" class="img-responsive">
+              <span class="badge badge-pill badge-danger circle count-items-cart">{{items()}}</span>
             </a>
           </td>
           <!-- <td width="16%">Olá:&nbsp;&nbsp;

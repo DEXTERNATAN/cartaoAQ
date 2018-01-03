@@ -1,3 +1,4 @@
+import { CartService } from './../shared/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,9 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
   }
 
+  items() {
+    return this.cartService.items.length > 0 ? this.cartService.items.length : '';
+  }
 }
