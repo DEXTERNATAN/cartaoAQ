@@ -28,9 +28,7 @@
     "ng2-scroll-to": "^1.0.7",
     "ngx-bootstrap": "^2.0.0-rc.0",
     "ngx-breadcrumbs": "0.0.3",
-    "nprogress": "^0.2.0",
     "rxjs": "^5.5.2",
-    "sweetalert2": "^7.3.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

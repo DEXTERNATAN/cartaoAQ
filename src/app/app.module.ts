@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 /* Modulo externos */
 import { AlertModule } from 'ngx-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -26,9 +26,8 @@ import { CartComponent } from './cart/cart.component';
 
 /* Services do projeto */
 import { ConfigCartaoService } from './shared/services/configCartao.service';
-import { CartitemComponent } from './cartitem/cartitem.component';
-import { SharedModule } from './shared/shared.module';
-import { LOCALE_ID } from '@angular/core';
+import { SendMailService } from './send-mail.service';
+
 
 @NgModule({
   declarations: [
@@ -46,22 +45,20 @@ import { LOCALE_ID } from '@angular/core';
     CartoesComponent,
     ContratoComponent,
     ConfigCartaoComponent,
-    CartComponent,
-    CartitemComponent
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AlertModule.forRoot(),
     CarouselModule.forRoot(),
     ScrollToModule.forRoot(),
-    SharedModule.forRoot(),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
     McBreadcrumbsModule
   ],
-  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [ ConfigCartaoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

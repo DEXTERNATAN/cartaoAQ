@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 
-import { SendMailService } from '../shared/services/send-mail.service';
+import { SendMailService } from '../send-mail.service';
 
 @Component({
   selector: 'app-contactform',
   templateUrl: './contactform.component.html',
   styleUrls: ['./contactform.component.css'],
+  providers: [SendMailService],
 })
 export class ContactformComponent implements OnInit {
 
