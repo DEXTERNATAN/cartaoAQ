@@ -25,7 +25,7 @@ export class ConfigCartaoComponent implements OnInit {
     public form: FormGroup;
     public cartao: Cartao;
     public blEnviar = false;
-    public entrega = true;
+    public entrega  = true;
     public retirada = false;
     public tblFrete = false;
     public formatos: any;

@@ -449,43 +449,49 @@
                           </td>
                         </tr>
                         <tr>
-                          <td class="Bgbranco">
+                          <td class="Bgbranco div-central">
                             <div class="features_items" align="center">
-                              <h2>
-                                <input class="input-formato" value="" type="radio">
-                                <label>
-                                  <span class="text-center text-info h3"> Entrega</span>
-                                </label>
-
-                                <input class="input-formato" value="" type="radio">
-                                <label>
-                                  <span class="text-center text-info h3">Retira</span>
-                                </label>
-                              </h2>
+                              <!-- novo component de radio -->
+                              <ul class="white ulin ng-scope">
+                                  <li class="blk-in-2">
+                                    <div class="optselect" [ngClass]="{'active': !retirada}" (click)="ativarEntrega()">
+                                      <input type="radio" name="use_pickup_places">
+                                      <div class="check"></div>
+                                      <label> Entrega</label>
+                                    </div>
+                                  </li>
+                                  <li class="blk-in-2">
+                                      <div class="optselect" [ngClass]="{'active': retirada}" (click)="ativarRetirada()">
+                                        <input type="radio" name="use_pickup_places">
+                                        <div class="check"></div>
+                                        <label> Retirada</label>
+                                      </div>
+                                    </li>
+                                </ul>                              
                             </div>
                           </td>
                         </tr>
                         <tr>
-                          <td class="Bgbranco" align="center">
-                            <h3>
-                              Pesquise o CEP
-                              <input style="width: 10.8em; height: 4.2em; background-color: white;" type="text">&nbsp;&nbsp;
-                              <input name="ok" class="btn-info alert" value="ok" type="button">
-                            </h3>
+                          <td class="Bgbranco cep" *ngIf="entrega">
+                            <div class="cep-entrega">
+                              <label for="cep">CEP</label>
+                              <input type="text" name="cep" maxlength="9">
+                              <!-- <input name="ok" class="btn-info alert" value="ok" type="button"> -->
+                              <button name="ok" class="btn green" value="ok" type="button" (click)="exibeFrete()">OK</button>
+                            </div>
                           </td>
                         </tr>
                         <tr align="center">
-                          <td class="Bgbranco">
-                            <div class="features_items" align="center">
-                              <span class="text-center text-info h3">
-                                ESCOLHA UM LOCAL PARA RETIRADA!
-                                <select>
+                          <td class="Bgbranco" *ngIf="retirada">
+                            <div class="features_items local-retirada">
+                                <label for="localPartida">ESCOLHA UM LOCAL PARA RETIRADA!</label>
+                                <select name="cidadeRetirada" (change)="exibeFrete()">
                                   <option value="br">Brasilia</option>
                                   <option value="sp">Sao paulo</option>
                                   <option value="rj">Rio de janeiro</option>
                                   <option value="ct">Curitiba</option>
                                 </select>
-                              </span>
+                              
                             </div>
                           </td>
                         </tr>
@@ -497,7 +503,7 @@
             </div>
             <div>&nbsp;</div>
             <!-- INICIO DA TABELA DE PRECOS -->
-            <div class="col-sm-9" *ngIf="blEnviar">
+            <div class="col-sm-9"  *ngIf="tblFrete">
               <form name="form1" method="post" action="">
                 <table class="breadcrumb" width="100%" height="550" cellspacing="15" cellpadding="15">
                   <tbody>
@@ -690,7 +696,7 @@
           </td>
         </tr>
         <tr>
-          <td *ngIf="blEnviar">
+          <td *ngIf="tblFrete">
             <div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="/assets/images/home/warning-icon-hi (1).png" width="20" height="20">&nbsp;
