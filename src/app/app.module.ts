@@ -28,7 +28,10 @@ import { CartComponent } from './cart/cart.component';
 import { ConfigCartaoService } from './shared/services/configCartao.service';
 import { CartitemComponent } from './cartitem/cartitem.component';
 import { SharedModule } from './shared/shared.module';
-import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -61,7 +64,7 @@ import { LOCALE_ID } from '@angular/core';
     HttpModule,
     McBreadcrumbsModule
   ],
-  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: localePt , useValue: 'pt-BR' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

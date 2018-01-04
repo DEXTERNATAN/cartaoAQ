@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { Product } from '../models/product.model';
-import {ErrorHandler} from '../../app.errorshandler';
+import { ErrorHandler } from '../../app.errorshandler';
 
 @Injectable()
 export class CartService {
@@ -25,20 +25,22 @@ export class CartService {
     }
 
     total(): number {
+        console.log(this.items
+            .map(item => item));
         return this.items
-        .map(item => item.payment.value)
-        .reduce((prev, value) => prev + value, 0);
+        .map(item => item)
+        .reduce((prev, item) => prev + (item.payment.value * item.qtdItems), 0);
     }
     totalIns(): number {
          return this.items
-        .map(item => item.payment.valueStallment)
+        .map(item => item.payment.valueInstallment)
         .reduce((prev, value) => prev + value, 0);
     }
     installment(): number {
         return Math.max.apply(
             Math, this.items
             .map(function(prod){
-            return prod.payment.qtdstallment;
+            return prod.payment.qtdInstallment;
         }));
     }
 }

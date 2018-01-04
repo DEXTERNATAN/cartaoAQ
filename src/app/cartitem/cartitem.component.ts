@@ -1,6 +1,6 @@
-import { Product } from './../shared/models/product.model';
-import { CartService } from './../shared/services/cart.service';
-import { ItemsService } from './../shared/services/item.service';
+import { Product } from '../shared/models/product.model';
+import { CartService } from '../shared/services/cart.service';
+import { ItemsService } from '../shared/services/item.service';
 import { Component, OnInit } from '@angular/core';
 import { default as NProgress} from 'nprogress';
 
@@ -25,5 +25,18 @@ export class CartitemComponent implements OnInit {
     this.cartService.addItem(product);
     NProgress.done();
   }
+
+  total(): number {
+    return this.cartService.total();
+  }
+
+  totalIns(): number {
+    return this.cartService.totalIns();
+  }
+
+  installments() {
+    return this.cartService.installment();
+  }
+
 
 }

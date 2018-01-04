@@ -1,10 +1,14 @@
 export class Product {
     id: string;
     name: string;
+    description: string;
     images: string[];
+    qtdItems: number;
+    previsaoEntrega: Date;
+    cep: string;
     payment: {
         value: number,
-        qtdstallment: number,
-        valueStallment: number
+        qtdInstallment: number,
+        valueInstallment: number
     };
 }
