@@ -42,6 +42,53 @@
   overflow: hidden;
 }
 
+.blk-in-1 {
+  width: 245px;
+  margin-right: 20px;
+  border: 1px solid #dbdddf;
+  width: 245px;
+}
+
+.box, .configure .box {
+  width: 243px;
+  height: 59px;
+  border: 1px solid #dbdddf;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cimpress-head .box div.opt, .configure .box div.opt {
+  width: 242px;
+}
+
+.opt {
+  position: absolute;
+  bottom: 0;
+  height: 58px;
+  width: 243px;
+  border-top: 1px solid #dbdddf;
+  cursor: pointer;
+}
+
+.opt.active {
+  background: #006ee3!important;
+  color: #fff!important;
+}
+
+.opt:hover {
+  background: #006ee3!important;
+  color: #fff!important;
+}
+
+.box div.opt, .configure .box div.opt {
+  position: absolute;
+  bottom: 0;
+  height: 58px;
+  width: 243px;
+  border-top: 1px solid #dbdddf;
+  cursor: pointer;
+}
 .white {
   background: #fff;
 }
@@ -55,6 +102,13 @@ ul {
   font-size: 16px;
   font-family: Open Sans Regular;
   font-weight: 700;
+}
+
+.accordion .ttl, .options, li.custom-quantity-toggle {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  width: 93%;
 }
 
 .options .blk-in-2 {
@@ -88,11 +142,17 @@ li {
   color: #fff!important;
 }
 
+.optselect:hover, .settings .box:hover .opt {
+  background: #006ee3!important;
+  color: #fff!important;
+}
+
 .optselect {
   display: table;
   width: 180px;
   cursor: pointer;
 }
+
 
 .settings .ulin .blk-in-2 {
   font-size: 16px;
@@ -110,10 +170,15 @@ button, input {
 }
 
 input[type="radio" i] {
-  /* margin: 3px 3px 0px 5px; */
-  margin: -6px 3px 0px -33px
+  margin: 10px 3px 0px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 99%;
+  height: 34px;
+  width: 34px;
 }
-/* 
+
+
 input[type="radio" i] {
   -webkit-appearance: radio;
   box-sizing: border-box;
@@ -122,10 +187,10 @@ input[type="radio" i] {
 input[type="radio" i], input[type="checkbox" i] {
   background-color: initial;
   cursor: default;
-  margin: 3px 0.5ex;
+  
   padding: initial;
   border: initial;
-} */
+}
 
 input, textarea, select, button {
   text-rendering: auto;
@@ -148,12 +213,6 @@ input, textarea, select, button, meter, progress {
 .options .check {
   margin-top: 10px;
  }
-
-.active .check {
-  background: url(/assets/images/sprites.png);
-  background-position: -508px -129px;
-  margin-top: 10px;
-}
 
 .cadd .check, .matrix-mobile td div.check, .opt .check, .options .check {
   content: '';
@@ -180,7 +239,31 @@ input, textarea, select, button, meter, progress {
   margin-top: 10px;
 }
 
+
+.active .check {
+  background: url(/assets/images/sprites.png);
+  background-position: -508px -129px;
+  margin-top: 10px;
+}
+
+.check.inpt{
+  margin-left: 10px;  
+}
+
+
 .configure .box div.opt label, .optselect label {
+  cursor: pointer;
+}
+
+.configure .box div.opt label, .optselect label {
+  cursor: pointer;
+}
+
+.box div.opt label, .configure .box div.opt label {
+  position: relative;
+  top: 17px;
+  left: -30px;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -239,3 +322,28 @@ input, textarea, select, button, meter, progress {
   border-radius: 5px;
   height: 45px;
 }
+
+/* Listagem dos tipos formatos e etc */
+
+i.lupa {
+  background: url(/assets/images/sprites.png);
+  width: 29px;
+  height: 30px;
+  background-position: -477px 89px;
+  margin-left: 73px;
+  margin-top: 75px;
+  position: absolute;
+  display: none;
+}
+
+.option-image img {
+  max-width: 179px;
+  max-height: 179px;
+}
+
+.image {
+  background: #fff;
+  height: 150px;
+  position: relative;
+}
+

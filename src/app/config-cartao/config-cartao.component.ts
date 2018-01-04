@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigCartaoService } from './../shared/services/configCartao.service';
@@ -25,11 +24,17 @@ export class ConfigCartaoComponent implements OnInit {
     public form: FormGroup;
     public cartao: Cartao;
     public blEnviar = false;
+    public blCriar = false;
+    public blContratar = false;
     public entrega  = true;
     public retirada = false;
     public tblFrete = false;
     public formatos: any;
     public impressao: any;
+    public papel: any;
+    public enobrecimento: any;
+    public extras: any;
+
 
     constructor(
         private formBuilder: FormBuilder,
@@ -48,12 +53,28 @@ export class ConfigCartaoComponent implements OnInit {
     ngOnInit() {
         this.formatos = this.CartaoService.getFormatos();
         this.impressao = this.CartaoService.getImpressao();
+        this.papel = this.CartaoService.getPapel();
+        this.enobrecimento = this.CartaoService.getEnobrecimento();
+        this.extras = this.CartaoService.getExtras();
     }
 
     enviarArte(opcao: boolean) {
-        this.blEnviar = !this.blEnviar;
+        this.blEnviar = true;
+        this.blCriar = false;
+        this.blContratar = false;
     }
 
+    criarArte(opcao: boolean) {
+        this.blEnviar = false;
+        this.blCriar = true;
+        this.blContratar = false;
+    }
+
+    contratarArte(opcao: boolean) {
+        this.blEnviar = false;
+        this.blCriar = false;
+        this.blContratar = true;
+    }
     ativarEntrega() {
         this.retirada = false;
         this.entrega = true;
