@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 
-import { SendMailService } from '../send-mail.service';
+import { SendMailService } from '../shared/services/sendmail.service';
 
 @Component({
   selector: 'app-contactform',
