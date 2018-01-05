@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Product } from './../shared/models/product.model';
 import { CartService } from './../shared/services/cart.service';
 import swal from 'sweetalert2'
-import { default as NProgress } from 'nprogress';
+import { NProgress } from 'nprogress';
 
 @Component({
   selector: 'appcart',
