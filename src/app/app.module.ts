@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
 
 /* Modulo externos */
 import { AlertModule } from 'ngx-bootstrap';
@@ -11,6 +13,7 @@ import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
 /* Componentes do projeto */
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -25,17 +28,14 @@ import { CartoesComponent } from './cartoes/cartoes.component';
 import { ContratoComponent } from './contrato/contrato.component';
 import { ConfigCartaoComponent } from './config-cartao/config-cartao.component';
 import { CartComponent } from './cart/cart.component';
+import { CartitemComponent } from './cartitem/cartitem.component';
 
 /* Services do projeto */
 import { ConfigCartaoService } from './shared/services/configCartao.service';
-import { CartitemComponent } from './cartitem/cartitem.component';
-import { SharedModule } from './shared/shared.module';
-import localePt from '@angular/common/locales/pt';
-import { registerLocaleData } from '@angular/common';
+import { SendMailService } from './shared/services/sendmail.service';
 
 registerLocaleData(localePt);
 
-import { SendMailService } from './shared/services/sendmail.service';
 
 @NgModule({
   declarations: [
@@ -47,9 +47,6 @@ import { SendMailService } from './shared/services/sendmail.service';
     ContactformComponent,
     SobreComponent,
     LancamentosComponent,
-    CartoesComponent,
-    ContratoComponent,
-    ContactformComponent,
     CartoesComponent,
     ContratoComponent,
     ConfigCartaoComponent,
@@ -68,7 +65,7 @@ import { SendMailService } from './shared/services/sendmail.service';
     HttpModule,
     McBreadcrumbsModule
   ],
-  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: localePt , useValue: 'pt-BR' } ],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: LOCALE_ID , useValue: 'pt-BR' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

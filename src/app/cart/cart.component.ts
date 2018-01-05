@@ -1,11 +1,12 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Product } from './../shared/models/product.model';
 import { CartService } from './../shared/services/cart.service';
-import swal from 'sweetalert2'
-import { NProgress } from 'nprogress';
+
+import swal from 'sweetalert2';
+import { default as NProgress } from 'nprogress';
 
 @Component({
-  selector: 'appcart',
+  selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
