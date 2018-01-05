@@ -1,6 +1,7 @@
-import { CartService } from './../shared/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { CartService } from './../shared/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -17,4 +18,5 @@ export class HeaderComponent implements OnInit {
   items() {
     return this.cartService.items.length > 0 ? this.cartService.items.length : '';
   }
+
 }

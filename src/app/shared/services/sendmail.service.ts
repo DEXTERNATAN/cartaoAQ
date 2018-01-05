@@ -10,6 +10,7 @@ export class SendMailService {
   headers: Headers;
   options: RequestOptions;
   url: any;
+
   constructor(private http: Http) {
     this.headers = new Headers({ 'Content-Type': 'application/json',
     'Accept': 'q=0.8;application/json;q=0.9' });

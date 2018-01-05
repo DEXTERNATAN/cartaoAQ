@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -9,18 +9,18 @@ import { ErrorHandler } from '../../app.errorshandler';
 @Injectable()
 export class CartService {
 
-    constructor() {}
+    constructor() { }
 
     items: Product[] = [];
 
     addItem(item: Product) {
         this.items.push(item);
-        sessionStorage.setItem( 'cart' , JSON.stringify(this.items));
+        sessionStorage.setItem('cart', JSON.stringify(this.items));
     }
 
-    removeItem( product: Product ) {
+    removeItem(product: Product) {
         this.items.splice(this.items.indexOf(product), 1);
-        // save item in session
+        // save item in session		
         sessionStorage.setItem('cart', JSON.stringify(this.items));
     }
 

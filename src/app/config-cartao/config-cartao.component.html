@@ -68,39 +68,47 @@
                         </tr>
                         <tr>
                           <td class="well" align="center">
-                            <form action="#" method="post">
-                              <div class="col-sm-4">
-                                <!--features_items-->
-                                <div>&nbsp;</div>
-                                <div align="center">
-                                  <img src="/assets/images/home/Enviar.fw.png">
-                                  <div class="brands_products">
-                                    <span class="h4">
-                                      <input class="input-formato" type="radio" (click)="enviarArte(true)"> Enviar minha arte</span>
-                                  </div>
-                                </div>
+
+                            <div class="col-sm-12">
+                              <!--features_items-->
+                              <div>&nbsp;</div>
+                              <div align="center">
+                                <ul class="white ulin">
+                                  <li class="blk-in-1">
+                                    <img src="/assets/images/home/Enviar.fw.png">
+                                    <div class="box upload" (click)="enviarArte(true)">
+                                      <div class="opt" [ngClass]="{'active': blEnviar}">
+                                        <input type="radio" name="use_pickup_places">
+                                        <div class="check"></div>
+                                        <label> Enviar minha arte</label>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="blk-in-1">
+                                    <img src="/assets/images/home/Enviar.fw.png">
+                                    <div class="box upload" (click)="criarArte(true)">
+                                      <div class="opt" [ngClass]="{'active': blCriar}">
+                                        <input type="radio" name="use_pickup_places">
+                                        <div class="check"></div>
+                                        <label>Criar On-line</label>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="blk-in-1">
+                                    <img src="/assets/images/home/Enviar.fw.png">
+                                    <div class="box upload" (click)="contratarArte(true)">
+                                      <div class="opt" [ngClass]="{'active': blContratar}">
+                                        <input type="radio" name="use_pickup_places">
+                                        <div class="check"></div>
+                                        <label>Contratar Criação</label>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
                               </div>
-                              <div class="col-sm-4">
-                                <div>&nbsp;</div>
-                                <div align="center">
-                                  <img src="/assets/images/home/online.fw.png">
-                                  <div class="brands_products">
-                                    <span class="h4">
-                                      <input class="input-formato" onclick="nuevapagina('contrato.html')" type="radio"> Criar On-line</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <div>&nbsp;</div>
-                                <div align="center">
-                                  <img src="/assets/images/home/Cdesinger.fw.png">
-                                  <div class="brands_products">
-                                    <span class="h4">
-                                      <input class="input-formato" onclick="nuevapagina('contrato.html')" type="radio"> Contratar Criação</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
+                            </div>
+
+                            <!-- </form> -->
                           </td>
                         </tr>
                       </tbody>
@@ -112,7 +120,6 @@
             <!-- FIM DAS OPCOES -->
             <div class="&nbsp;">&nbsp;</div>
             <div align="left">
-              <br>
               <h3>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img src="/assets/images/home/dois.jpg" width="40" height="40">&nbsp; SELECIONE AS OPÇÕES
@@ -134,17 +141,23 @@
                         </tr>
                         <tr *ngIf="blEnviar">
                           <td class="Bgbranco">
+
                             <div class="col-sm-3" *ngFor="let frmt of formatos">
-                              <div class="product-image-wrapper">
-                                <div class="">
-                                  <div class="text-center">
-                                    <img src="{{ frmt.pathImagem }}" alt="{{ frmt.altImage }}">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="{{ frmt.descricao}}" formControlName="Formato"> &nbsp;{{ frmt.descricao}}</span>
+                              <ul class="white ulin ng-scope">
+                                <li class="blk-in-2">
+                                  <div class="image option-image">
+                                    <i class="lupa"></i>
+                                    <img src="{{ frmt.pathImagem }}" alt="{{ frmt.altImage }}" title="{{ frmt.altImage }}">
                                   </div>
-                                </div>
-                              </div>
+                                  <div class="optselect" [ngClass]="{'active': form.value.Formato == frmt.descricao}">
+                                    <input type="radio" value="{{ frmt.descricao}}" formControlName="Formato">
+                                    <div class="check inpt"></div>
+                                    <label class="ng-binding">{{ frmt.descricao}}</label>
+                                  </div>
+                                </li>
+                              </ul>
                             </div>
+
                           </td>
                         </tr>
                       </tbody>
@@ -169,17 +182,23 @@
                         </tr>
                         <tr *ngIf="blEnviar">
                           <td class="Bgbranco">
+
                             <div class="col-sm-3" *ngFor="let imp of impressao">
-                              <div class="product-image-wrapper">
-                                <div class="text-center">
-                                  <div class="text-center">
-                                    <img src="{{ imp.pathImagem }}" alt="{{ imp.altImage }}">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="{{ imp.descricao }}" formControlName="Impressao"> &nbsp; {{ imp.descricao }} </span>
+                              <ul class="white ulin ng-scope">
+                                <li class="blk-in-2">
+                                  <div class="image option-image">
+                                    <i class="lupa"></i>
+                                    <img src="{{ imp.pathImagem }}" alt="{{ imp.altImage }}" title="{{ imp.altImage }}">
                                   </div>
-                                </div>
-                              </div>
+                                  <div class="optselect" [ngClass]="{'active': form.value.Impressao == imp.descricao}">
+                                    <input type="radio" value="{{ imp.descricao }}" formControlName="Impressao">
+                                    <div class="check inpt"></div>
+                                    <label class="ng-binding">{{ imp.descricao }}</label>
+                                  </div>
+                                </li>
+                              </ul>
                             </div>
+
                           </td>
                         </tr>
                       </tbody>
@@ -204,106 +223,23 @@
                         </tr>
                         <tr *ngIf="blEnviar">
                           <td class="Bgbranco">
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="text-center">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/240g.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Offset 240g" formControlName="Papel"> &nbsp;Offset 240g </span>
+
+                            <div class="col-sm-3" *ngFor="let ppl of papel">
+                              <ul class="white ulin ng-scope">
+                                <li class="blk-in-2">
+                                  <div class="image option-image">
+                                    <i class="lupa"></i>
+                                    <img src="{{ ppl.pathImagem }}" alt="{{ ppl.altImage }}" title="{{ ppl.altImage }}">
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/240gg.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Reciclato 240g" formControlName="Papel"> &nbsp;Reciclato 240g </span>
+                                  <div class="optselect" [ngClass]="{'active': form.value.Papel == ppl.descricao}">
+                                    <input type="radio" value="{{ ppl.descricao }}" formControlName="Papel">
+                                    <div class="check inpt"></div>
+                                    <label class="ng-binding">{{ ppl.descricao }}</label>
                                   </div>
-                                </div>
-                              </div>
+                                </li>
+                              </ul>
                             </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/250.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Couché Brilho 250g" formControlName="Papel"> &nbsp;Couché Brilho 250g </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/250fg.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Couché Fosco 250g" formControlName="Papel"> &nbsp;Couché Fosco 250g </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/250fg.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Couché Brilho 300g" formControlName="Papel"> &nbsp; Couché Brilho 300g </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/250fg.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Couché Fosco 300g" formControlName="Papel"> &nbsp;Couché Fosco 300g </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/250fg.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Couché Brilho 350g" formControlName="Papel"> &nbsp;Couché Brilho 350g </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/250fg.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Couché Fosco 350g" formControlName="Papel"> &nbsp;Couché Fosco 350g </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/250fg.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Silverprint 330g" formControlName="Papel"> &nbsp; Silverprint 330g </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
+
                         </tr>
                       </tbody>
                     </table>
@@ -327,50 +263,23 @@
                         </tr>
                         <tr *ngIf="blEnviar">
                           <td class="Bgbranco">
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="text-center">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/laminacaofosca.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Laminação Fosca" formControlName="Enobrecimento"> &nbsp;Laminação Fosca </span>
+
+                            <div class="col-sm-3" *ngFor="let enobr of enobrecimento">
+                              <ul class="white ulin ng-scope">
+                                <li class="blk-in-2">
+                                  <div class="image option-image">
+                                    <i class="lupa"></i>
+                                    <img src="{{ enobr.pathImagem }}" alt="{{ enobr.altImage }}" title="{{ enobr.altImage }}">
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/laminacaobrilho.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Laminação Brilho" formControlName="Enobrecimento"> &nbsp;Laminação Brilho </span>
+                                  <div class="optselect" [ngClass]="{'active': form.value.Enobrecimento == enobr.descricao}">
+                                    <input type="radio" value="{{ enobr.descricao}}" formControlName="Enobrecimento">
+                                    <div class="check inpt"></div>
+                                    <label class="ng-binding">{{ enobr.descricao}}</label>
                                   </div>
-                                </div>
-                              </div>
+                                </li>
+                              </ul>
                             </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/verniztotal.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Verniz UV Total" formControlName="Enobrecimento"> &nbsp;Verniz UV Total </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/soft-touch.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Laminação Soft Touch" formControlName="Enobrecimento"> &nbsp;Laminação Soft Touch </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+
                           </td>
                         </tr>
                       </tbody>
@@ -395,28 +304,25 @@
                         </tr>
                         <tr *ngIf="blEnviar">
                           <td class="Bgbranco">
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div>
-                                  <div class="text-center">
-                                    <img src="/assets/images/home/laminacaofosca.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Sem Extras" formControlName="Extras"> &nbsp;Sem Extras </span>
+
+                            <div class="col-sm-3" *ngFor="let extr of extras">
+                              <ul class="white ulin ng-scope">
+                                <li class="blk-in-2">
+                                  <div class="image option-image">
+                                    <i class="lupa"></i>
+                                    <img src="{{ extr.pathImagem }}" alt="{{ extr.altImage }}" title="{{ extr.altImage }}">
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <div class="product-image-wrapper">
-                                <div class="single-products">
-                                  <div class="img-responsive text-center">
-                                    <img src="/assets/images/home/verniztotal.jpg" alt="">
-                                    <span class="text-center text-info h4">
-                                      <input class="input-formato" type="radio" value="Laminação Brilho" formControlName="Extras"> &nbsp;Laminação Brilho </span>
+                                  <div class="optselect" [ngClass]="{'active': form.value.Extras == extr.descricao}">
+
+                                    <input type="radio" value="{{ extr.descricao }}" formControlName="Extras">
+
+                                    <div class="check inpt"></div>
+                                    <label class="ng-binding">{{ extr.descricao}}</label>
                                   </div>
-                                </div>
-                              </div>
+                                </li>
+                              </ul>
                             </div>
+
                           </td>
                         </tr>
                       </tbody>
@@ -453,21 +359,21 @@
                             <div class="features_items" align="center">
                               <!-- novo component de radio -->
                               <ul class="white ulin ng-scope">
-                                  <li class="blk-in-2">
-                                    <div class="optselect" [ngClass]="{'active': !retirada}" (click)="ativarEntrega()">
-                                      <input type="radio" name="use_pickup_places">
-                                      <div class="check"></div>
-                                      <label> Entrega</label>
-                                    </div>
-                                  </li>
-                                  <li class="blk-in-2">
-                                      <div class="optselect" [ngClass]="{'active': retirada}" (click)="ativarRetirada()">
-                                        <input type="radio" name="use_pickup_places">
-                                        <div class="check"></div>
-                                        <label> Retirada</label>
-                                      </div>
-                                    </li>
-                                </ul>                              
+                                <li class="blk-in-2">
+                                  <div class="optselect" [ngClass]="{'active': !retirada}" (click)="ativarEntrega()">
+                                    <input type="radio" name="use_pickup_places">
+                                    <div class="check"></div>
+                                    <label> Entrega</label>
+                                  </div>
+                                </li>
+                                <li class="blk-in-2">
+                                  <div class="optselect" [ngClass]="{'active': retirada}" (click)="ativarRetirada()">
+                                    <input type="radio" name="use_pickup_places">
+                                    <div class="check"></div>
+                                    <label> Retirada</label>
+                                  </div>
+                                </li>
+                              </ul>
                             </div>
                           </td>
                         </tr>
@@ -484,14 +390,14 @@
                         <tr align="center">
                           <td class="Bgbranco" *ngIf="retirada">
                             <div class="features_items local-retirada">
-                                <label for="localPartida">ESCOLHA UM LOCAL PARA RETIRADA!</label>
-                                <select name="cidadeRetirada" (change)="exibeFrete()">
-                                  <option value="br">Brasilia</option>
-                                  <option value="sp">Sao paulo</option>
-                                  <option value="rj">Rio de janeiro</option>
-                                  <option value="ct">Curitiba</option>
-                                </select>
-                              
+                              <label for="localPartida">ESCOLHA UM LOCAL PARA RETIRADA!</label>
+                              <select name="cidadeRetirada" (change)="exibeFrete()">
+                                <option value="br">Brasilia</option>
+                                <option value="sp">Sao paulo</option>
+                                <option value="rj">Rio de janeiro</option>
+                                <option value="ct">Curitiba</option>
+                              </select>
+
                             </div>
                           </td>
                         </tr>
@@ -503,197 +409,197 @@
             </div>
             <div>&nbsp;</div>
             <!-- INICIO DA TABELA DE PRECOS -->
-            <div class="col-sm-9"  *ngIf="tblFrete">
-              <form name="form1" method="post" action="">
-                <table class="breadcrumb" width="100%" height="550" cellspacing="15" cellpadding="15">
-                  <tbody>
-                    <tr class="">
-                      <td colspan="2" align="center">
-                        <img src="/assets/images/home/carro.fw.png" class="img-responsive" width="60%" height="30%">
-                      </td>
-                      <td class="productinfo" width="19%" align="right">QUANTIDADE, PREVISÃO</td>
-                      <td class="productinfo" width="21%" align="left"> DE ENTREGA E VALORES</td>
-                      <td class="productinfo" width="23%"></td>
-                      <td class="productinfo" width="2%" hidden="yes"></td>
-                    </tr>
-                    <tr class="btn-primary" align="center">
-                      <td class="productinfo" width="17%">
-                        <h3>Quantidade</h3>
-                      </td>
-                      <td class="productinfo table-hover" width="18%">
-                        <h3>terça-feira</h3>
-                        <br>07 nov</td>
-                      <td class="productinfo  table-hover">
-                        <h3>terça-feira</h3>
-                        <br>07 nov</td>
-                      <td class="productinfo  table-hover">
-                        <h3>terça-feira</h3>
-                        <br>07 nov</td>
-                      <td class="productinfo  table-hover">
-                        <h3>terça-feira</h3>
-                        <br>07 nov</td>
-                    </tr>
-                    <tr class="table-hover">
-                      <td>100&nbsp;un</td>
-                      <td class="animated">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 90%;vertical-align:middle;
+            <div class="col-sm-9" *ngIf="tblFrete">
+
+              <table class="breadcrumb" width="100%" height="550" cellspacing="15" cellpadding="15">
+                <tbody>
+                  <tr class="">
+                    <td colspan="2" align="center">
+                      <img src="/assets/images/home/carro.fw.png" class="img-responsive" width="60%" height="30%">
+                    </td>
+                    <td class="productinfo" width="19%" align="right">QUANTIDADE, PREVISÃO</td>
+                    <td class="productinfo" width="21%" align="left"> DE ENTREGA E VALORES</td>
+                    <td class="productinfo" width="23%"></td>
+                    <td class="productinfo" width="2%" hidden="yes"></td>
+                  </tr>
+                  <tr class="btn-primary" align="center">
+                    <td class="productinfo" width="17%">
+                      <h3>Quantidade</h3>
+                    </td>
+                    <td class="productinfo table-hover" width="18%">
+                      <h3>terça-feira</h3>
+                      <br>07 nov</td>
+                    <td class="productinfo  table-hover">
+                      <h3>terça-feira</h3>
+                      <br>07 nov</td>
+                    <td class="productinfo  table-hover">
+                      <h3>terça-feira</h3>
+                      <br>07 nov</td>
+                    <td class="productinfo  table-hover">
+                      <h3>terça-feira</h3>
+                      <br>07 nov</td>
+                  </tr>
+                  <tr class="table-hover">
+                    <td>100&nbsp;un</td>
+                    <td class="animated">
+                      <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 90%;vertical-align:middle;
   border: 2px solid #7396FF; " type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input id="roundedOne" class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input id="roundedOne" class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input id="roundedOne" class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                    <tr class="shipping label-success">
-                      <td class="text-info table-hover">250 un</td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input id="roundedOne" class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input id="roundedOne" class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input id="roundedOne" class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                  <tr class="shipping label-success">
+                    <td class="text-info table-hover">250 un</td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 50%;vertical-align:middle;
   border: 2px solid #7396FF;" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>500 un</td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                    <tr class="shipping label-success">
-                      <td class="text-info">1.000 un</td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2.500 un</td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class=" table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                    <tr class="shipping label-success">
-                      <td class="text-info table-hover">5.000 un</td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="table-hover">10.000 un</td>
-                      <td class="table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                    <tr class="shipping label-success">
-                      <td class="text-info table-hover">20.000 un</td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                      <td class="text-info table-hover">
-                        <input class="input-formato" type="radio">
-                        <label for="radio"></label>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form>
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>500 un</td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                  <tr class="shipping label-success">
+                    <td class="text-info">1.000 un</td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2.500 un</td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class=" table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                  <tr class="shipping label-success">
+                    <td class="text-info table-hover">5.000 un</td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-hover">10.000 un</td>
+                    <td class="table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                  <tr class="shipping label-success">
+                    <td class="text-info table-hover">20.000 un</td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                    <td class="text-info table-hover">
+                      <input class="input-formato" type="radio">
+                      <label for="radio"></label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- </form> -->
             </div>
             <br>
             <br>
-          </td>
+            </td>
         </tr>
         <tr>
           <td *ngIf="tblFrete">
@@ -718,7 +624,7 @@
                 </button>
               </a>
             </div>
-            <div *ngIf="blEnviar">
+            <div *ngIf="tblFrete">
               <a href="#">
                 <button class="alert btn-primary">
                   <span>
