@@ -19,3 +19,7 @@
 .info-box-cart {
   display: flex;
 }
+
+.cursor:hover {
+  cursor: pointer
+}

@@ -8,9 +8,9 @@ export class ErrorHandler {
     if (errorResponse instanceof Response) {
       const mensageBody = errorResponse.json() || '';
       const err = mensageBody.error || JSON.stringify(mensageBody);
-      errorMessage = `${errorResponse.url}: ${errorResponse.status} - ${errorResponse.statusText || ''} ${err}`
+      errorMessage = `${errorResponse.url}: ${errorResponse.status} - ${errorResponse.statusText || ''} ${err}`;
     }else {
-      errorMessage = errorResponse.message ? errorResponse.message : errorResponse.toString()
+      errorMessage = errorResponse.message ? errorResponse.message : errorResponse.toString();
     }
     console.log(errorMessage);
     return Observable.throw(errorMessage);
