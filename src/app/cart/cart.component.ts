@@ -65,7 +65,7 @@ export class CartComponent implements OnInit {
   removeItem(produto: Product) {
     let c: any;
     c = this.cartService;
-
+    NProgress.start();
     swal({
       title: 'Confirmacao',
       text: 'Voce tem certeza que deseja remover este item das suas intencoes de compra?',
@@ -91,6 +91,7 @@ export class CartComponent implements OnInit {
         );
       }
     });
+    NProgress.done();
   }
 
   total(): number {
