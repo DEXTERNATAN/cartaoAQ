@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LOCALE_ID } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
-import localePt from '@angular/common/locales/pt';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+// registerLocaleData
+// import localePt from '@angular/common/locales/pt';
 
 
 /* Modulo externos */
@@ -34,7 +35,7 @@ import { CartitemComponent } from './cartitem/cartitem.component';
 import { ConfigCartaoService } from './shared/services/configCartao.service';
 import { SendMailService } from './shared/services/sendmail.service';
 
-registerLocaleData(localePt);
+// registerLocaleData(localePt);
 
 
 @NgModule({
