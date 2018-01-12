@@ -13,6 +13,13 @@ export class Cartao {
     ConfigAdicionais: string;
 }
 
+export interface Entrega {
+    Quantidade: number;
+    DiaSemana: Object[];
+    Mes: string[];
+    Valor: number[];
+}
+
 @Component({
     selector: 'app-config-cartao',
     templateUrl: './config-cartao.component.html',
@@ -23,6 +30,7 @@ export class ConfigCartaoComponent implements OnInit {
 
     public form: FormGroup;
     public cartao: Cartao;
+    public tblEntrega: Entrega[] = [];
     public blEnviar = false;
     public blCriar = false;
     public blContratar = false;
@@ -56,6 +64,34 @@ export class ConfigCartaoComponent implements OnInit {
         this.papel = this.CartaoService.getPapel();
         this.enobrecimento = this.CartaoService.getEnobrecimento();
         this.extras = this.CartaoService.getExtras();
+
+        this.tblEntrega.push(
+            {
+                'Quantidade': 100,
+                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
+                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'Valor': [100, 50, 30, 60]
+            },
+            {
+                'Quantidade': 200,
+                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
+                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'Valor': [100, 50, 30, 60]
+            },
+            {
+                'Quantidade': 300,
+                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
+                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'Valor': [100, 50, 30, 60]
+            },
+            {
+                'Quantidade': 400,
+                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
+                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'Valor': [100, 50, 30, 60]
+            }
+        );
+
     }
 
     enviarArte(opcao: boolean) {

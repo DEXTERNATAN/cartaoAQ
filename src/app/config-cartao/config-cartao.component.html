@@ -392,6 +392,7 @@
                             <div class="features_items local-retirada">
                               <label for="localPartida">ESCOLHA UM LOCAL PARA RETIRADA!</label>
                               <select name="cidadeRetirada" (change)="exibeFrete()">
+                                <option value="">Selecione</option>
                                 <option value="br">Brasilia</option>
                                 <option value="sp">Sao paulo</option>
                                 <option value="rj">Rio de janeiro</option>
@@ -409,20 +410,38 @@
             </div>
             <div>&nbsp;</div>
             <!-- INICIO DA TABELA DE PRECOS -->
-            <div class="col-sm-9" *ngIf="tblFrete">
-
+            <!-- *ngIf="tblFrete" -->
+            <div class="col-sm-9" >
+              
               <table class="breadcrumb" width="100%" height="550" cellspacing="15" cellpadding="15">
                 <tbody>
                   <tr class="">
                     <td colspan="2" align="center">
                       <img src="/assets/images/home/carro.fw.png" class="img-responsive" width="60%" height="30%">
                     </td>
-                    <td class="productinfo" width="19%" align="right">QUANTIDADE, PREVISÃO</td>
-                    <td class="productinfo" width="21%" align="left"> DE ENTREGA E VALORES</td>
+                    <td class="productinfo" colspan="2" width="50%" align="left"> QUANTIDADE, PREVISÃO DE ENTREGA E VALORES</td>
                     <td class="productinfo" width="23%"></td>
                     <td class="productinfo" width="2%" hidden="yes"></td>
                   </tr>
+                  
                   <tr class="btn-primary" align="center">
+                    <th>Quantidade</th>
+                    <th *ngFor="let itensMes of tblEntrega">
+                      <div *ngFor="let itensMEsDesc of itensMes.DiaSemana">
+                        <span>{{ itensMEsDesc.Semana  }}</span>
+                        <br />
+                        <span>{{ itensMEsDesc.dia  }}</span>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr *ngFor="let itens of tblEntrega">
+                    <td ><span style="color: #000;"><b>{{ itens. Quantidade }}</b>&nbsp;<i>un</i></span></td>
+                    <td *ngFor="let itensValor of itens.Valor">
+                      <span style="color: #000;">R$ {{ itensValor }}</span>
+                    </td>
+                  </tr>
+                  
+                  <!-- <tr class="btn-primary" align="center" >
                     <td class="productinfo" width="17%">
                       <h3>Quantidade</h3>
                     </td>
@@ -438,8 +457,8 @@
                     <td class="productinfo  table-hover">
                       <h3>terça-feira</h3>
                       <br>07 nov</td>
-                  </tr>
-                  <tr class="table-hover">
+                  </tr> -->
+                  <!-- <tr class="table-hover">
                     <td>100&nbsp;un</td>
                     <td class="animated">
                       <input style="width: 2.3em; height: 2.3em; background-color: white; border-radius: 90%;vertical-align:middle;
@@ -592,7 +611,7 @@
                       <input class="input-formato" type="radio">
                       <label for="radio"></label>
                     </td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
               <!-- </form> -->
