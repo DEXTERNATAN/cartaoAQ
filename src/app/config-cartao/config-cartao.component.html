@@ -421,20 +421,18 @@
                       <!-- <div >
                         <img src="/assets/images/home/carro.fw.png" class="img-responsive" width="60%" height="30%">
                       </div> -->
+                      <div style="margin-right: -570px; margin-top: -33px;">QUANTIDADE, PREVISÃO DE ENTREGA E VALORES</div>
                     </td>
-                    <td class="productinfo" colspan="2" width="50%" align="left"> QUANTIDADE, PREVISÃO DE ENTREGA E VALORES</td>
-                    <td class="productinfo" width="23%"></td>
-                    <td class="productinfo" width="2%" hidden="yes"></td>
+                    <!-- <td class="productinfo" colspan="2" width="50%" align="left"> QUANTIDADE, PREVISÃO DE ENTREGA E VALORES</td> -->
                   </tr>
                   
                   <tr class="btn-primary" align="center">
                     <th>Quantidade</th>
                     <th *ngFor="let itensMes of tblEntrega">
                       <div *ngFor="let itensMEsDesc of itensMes.DiaSemana">
-                        <span>{{ itensMEsDesc.Semana  }}</span>
-                        <span>Teste</span>
-                        <br />
-                        <span>{{ itensMEsDesc.dia  }}</span>
+                        <span style="">{{ itensMEsDesc.Semana  }}</span>
+                        <span >{{ itensMEsDesc.dia  }}</span>
+                        <span >{{ itensMEsDesc.Mes  }}</span>
                       </div>
                     </th>
                   </tr>

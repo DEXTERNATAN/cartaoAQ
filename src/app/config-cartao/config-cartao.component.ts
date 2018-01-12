@@ -16,7 +16,6 @@ export class Cartao {
 export interface Entrega {
     Quantidade: number;
     DiaSemana: Object[];
-    Mes: string[];
     Valor: number[];
 }
 
@@ -68,26 +67,22 @@ export class ConfigCartaoComponent implements OnInit {
         this.tblEntrega.push(
             {
                 'Quantidade': 100,
-                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
-                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'DiaSemana': [{ 'dia': '16', 'Semana': 'segunda-feira', 'Mes': 'Jan' }],
                 'Valor': [100, 50, 30, 60]
             },
             {
-                'Quantidade': 200,
-                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
-                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'Quantidade': 100,
+                'DiaSemana': [{ 'dia': '17', 'Semana': 'terça-feira', 'Mes': 'Jan' }],
                 'Valor': [100, 50, 30, 60]
             },
             {
-                'Quantidade': 300,
-                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
-                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'Quantidade': 100,
+                'DiaSemana': [{ 'dia': '18', 'Semana': 'quarta-feira', 'Mes': 'Jan' }],
                 'Valor': [100, 50, 30, 60]
             },
             {
-                'Quantidade': 400,
-                'DiaSemana': [{ 'dia': '16', 'Semana': 'Segunda'}],
-                'Mes': ['jan', 'jan', 'jan', 'jan'],
+                'Quantidade': 100,
+                'DiaSemana': [{ 'dia': '19', 'Semana': 'quinta-feira', 'Mes': 'Jan' }],
                 'Valor': [100, 50, 30, 60]
             }
         );
