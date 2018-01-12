@@ -8,8 +8,11 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --aot -prod",
+    "deploy": "git push origin master"
   },
+  
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
@@ -53,5 +56,9 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
+  },
+  "engines": {
+    "node": "6.9.2",
+    "yarn": "0.23.3"
   }
 }
