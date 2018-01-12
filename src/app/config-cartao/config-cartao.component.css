@@ -348,3 +348,21 @@ i.lupa {
 }
 
 /* Matrix table */
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.ship i {
+  width: 75px;
+  height: 49px;
+  display: block;
+  background: url(/assets/images/sprites.png);
+  background-position: -165px -40px;
+  margin: 0 auto;
+  position: relative;
+  top: 14px;
+}
