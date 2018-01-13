@@ -45,8 +45,8 @@
 .blk-in-1 {
   width: 245px;
   margin-right: 20px;
-  border: 1px solid #dbdddf;
   width: 245px;
+  padding: 0px;
 }
 
 .box, .configure .box {
@@ -93,10 +93,7 @@
   background: #fff;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
+
 
 .settings .ulin .blk-in-2 {
   font-size: 16px;
@@ -121,19 +118,9 @@ ul {
 }
 
 .blk-in-2 {
-  margin-right: 12px;
+  margin-right: 8px;
   margin-bottom: 12px;
   border: 1px solid #dbdddf;
-}
-
-li {
-  list-style: none;
-  float: left;
-}
-
-li {
-  display: list-item;
-  text-align: -webkit-match-parent;
 }
 
 
@@ -222,7 +209,6 @@ input, textarea, select, button, meter, progress {
   background: #fff;
   display: block;
   border-radius: 100%;
-  margin-left: 10px;
   margin-top: 7px;
   margin-bottom: 10px;
   float: left;
@@ -237,6 +223,7 @@ input, textarea, select, button, meter, progress {
   display: block;
   border-radius: 100%;
   margin-top: 10px;
+  margin-left:10px;
 }
 
 
