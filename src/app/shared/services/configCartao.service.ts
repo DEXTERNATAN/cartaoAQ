@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { Impressao } from './../models/impressao.models';
+import { Impressao } from './../models/impressao.model';
 import { Formato } from './../models/formato.model';
 import { Papel } from '../models/papel.model';
 import { Enobrecimento } from './../models/enobrecimento.model';
-import { Extras } from '../models/extras.models';
+import { Extras } from '../models/extras.model';
 
 
 @Injectable()
