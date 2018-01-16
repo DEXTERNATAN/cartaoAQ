@@ -635,16 +635,29 @@
         </tr>
         <tr>
           <td>
-            <div class="title text-center">
+              <section class="endbuttons">
+                  <ul>
+                    <div class="buttonright">
+                      <button class="green add-to-cart" ng-click="addToCartPrompt()" ng-disabled="false === canAddToCart().status">
+                        <span>Continuar</span>
+                      </button>
+                    </div>
+                  </ul>
+                </section>
+            <!-- <div class="title text-center">
               <br>
               <br>
-
               <a href="Config-Cartao-EnviarArte.html">
                 <button type="submit" class="alert btn-info" [ngClass]="{'btnEnable': blEnviar, 'btnDisable': !blEnviar}" [disabled]="!form.valid">
                   <span>Continuar</span>
                 </button>
               </a>
-            </div>
+              <div class="buttonright">
+                <button class="green add-to-cart" ng-click="addToCartPrompt()" ng-disabled="false === canAddToCart().status">
+                  <span>Continuar</span>
+                </button>
+              </div>
+            </div> -->
             <div *ngIf="tblFrete">
               <a href="#">
                 <button class="alert btn-primary">

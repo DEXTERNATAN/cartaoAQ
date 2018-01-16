@@ -1,6 +1,6 @@
 
 .btnEnable {
-  color: red;
+  background: #36c265;
 }
 
 .btnDisable {
@@ -365,4 +365,39 @@ i.lupa {
   margin: 0 auto;
   position: relative;
   top: 14px;
+}
+
+
+/* botao continuar */
+.endbuttons {
+  width: 860px;
+  float: left;
+}
+
+.buttonright {
+  float: right;
+}
+
+.settings button.green.add-to-cart {
+  width: 265px;
+  text-transform: uppercase;
+}
+
+button.green:enabled {
+  background: #36c265;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.endbuttons button {
+  width: 240px;
+  height: 40px;
+}
+
+.settings button.green.add-to-cart {
+  width: 265px;
+  text-transform: uppercase;
 }
