@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LOCALE_ID } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 // registerLocaleData
 // import localePt from '@angular/common/locales/pt';
@@ -66,7 +65,7 @@ import { SendMailService } from './shared/services/sendmail.service';
     HttpModule,
     McBreadcrumbsModule
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: LOCALE_ID , useValue: 'pt-BR' } ],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

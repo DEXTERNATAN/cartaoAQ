@@ -1,17 +1,12 @@
+import { CartService } from './../shared/services/cart.service';
+import { Product } from './../shared/models/product.model';
+import { Enobrecimento } from './../shared/models/enobrecimento.model';
+import { Cartao } from './../shared/models/cartao.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigCartaoService } from './../shared/services/configCartao.service';
+import { Router } from '@angular/router';
 
-export class Cartao {
-    Formato: string;
-    Impressao: string;
-    Cores: string;
-    Papel: string;
-    Acabamento: string;
-    Enobrecimento: string;
-    Extras: string;
-    ConfigAdicionais: string;
-}
 
 export interface Entrega {
     Quantidade: number;
@@ -45,7 +40,9 @@ export class ConfigCartaoComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private CartaoService: ConfigCartaoService
+        private CartaoService: ConfigCartaoService,
+        private cartService:CartService,
+        private router: Router
     ) {
         this.form = formBuilder.group({
             Formato: '90 x 50 mm',
@@ -126,7 +123,32 @@ export class ConfigCartaoComponent implements OnInit {
 
     save() {
         const cartaoValue = this.form.value;
+        let description = 'Cartao de visita';
+
+        for (let key of Object.keys(cartaoValue)) {
+            description = description +', ' + cartaoValue[key];
+        }
+       
+        let produto: Product = new Product()
+        produto.description = description;
+        let date = new Date();
+        let id = date.getMilliseconds();
+        produto.id = id.toString();
+        produto.cep = '72225-273';
+        produto.previsaoEntrega = new Date();
+        produto.qtdItems = 10;
+        produto.images = [
+            'assets/images/home/sprite-cart.fw.png',
+          ];
+        produto.payment = {
+            value: 100,
+            qtdInstallment: 10,
+            valueInstallment: 10
+          };
+        
+        this.cartService.addItem(produto);
         console.log(cartaoValue);
-    }
+        this.router.navigate(['cart']);
+        }
 
 }

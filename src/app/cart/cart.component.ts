@@ -16,42 +16,6 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    let product = new Product();
-    // Apenas para teste pode ser removido
-    product.id = '171';
-    product.name = 'Mega Cartao o melhor de todos';
-    product.previsaoEntrega = new Date();
-    product.cep = '72225-270';
-    product.description = ' 90 x 50 mm, Frente e Verso, 4x4 (colorido), Couché Fosco 300g, Refile, Laminação Fosca, Sem Extras';
-    product.images = [
-      'assets/images/home/sprite-cart.fw.png',
-    ];
-    product.qtdItems = 12;
-    product.payment = {
-      value: 20.9,
-      qtdInstallment: 10,
-      valueInstallment: 134.11
-    };
-
-    this.cartService.addItem(product);
-    product = new Product();
-    product.id = '172';
-    product.name = 'Mega Cartao o melhor de todos';
-    product.previsaoEntrega = new Date();
-    product.cep = '72225-270';
-    product.description = ' 90 x 50 mm, Frente e Verso, 4x4 (colorido), Couché Fosco 300g, Refile, Laminação Fosca, Sem Extras';
-    product.images = [
-      'assets/images/home/sprite-cart.fw.png',
-    ];
-    product.qtdItems = 12;
-    product.payment = {
-      value: 139.9,
-      qtdInstallment: 10,
-      valueInstallment: 134.11
-    };
-    this.cartService.addItem(product);
-
-    // Final do teste
     const cartSession = sessionStorage.getItem('cart');
     if (cartSession != null) {
       this.cartService.items = JSON.parse(cartSession);
@@ -103,4 +67,3 @@ export class CartComponent implements OnInit {
   }
 
 }
-
