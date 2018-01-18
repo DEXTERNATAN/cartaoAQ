@@ -265,7 +265,7 @@
                 <th>Quantidade</th>
                 <th *ngFor="let itensMes of tblEntrega">
                   <div *ngFor="let itensMEsDesc of itensMes.DiaSemana">
-                    <span style="">{{ itensMEsDesc.Semana }}</span>
+                    <span>{{ itensMEsDesc.Semana }}</span>
                     <span>{{ itensMEsDesc.dia }}</span>
                     <span>{{ itensMEsDesc.Mes }}</span>
                   </div>
@@ -278,8 +278,13 @@
                     <i>un</i>
                   </span>
                 </td>
-                <td *ngFor="let itensValor of itens.Valor">
-                  <span style="color: #000;">R$ {{ itensValor }}</span>
+                <td *ngFor="let itensValor of itens.Valor; let i = index">
+                  <div class="optselect"  [ngClass]="{'active': form.value.Valor == itensValor}">
+                      <input type="radio" value="{{ itensValor }}" formControlName="Valor">
+                      <div class="check"></div>
+                      <label> R$ {{ itensValor }}<br><span class="un">R$0,66 / un</span></label>
+                      
+                    </div>
                 </td>
               </tr>
             </tbody>

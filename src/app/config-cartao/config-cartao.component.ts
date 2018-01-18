@@ -50,7 +50,8 @@ export class ConfigCartaoComponent implements OnInit {
             Cores: '4x4(colorido)',
             Papel: 'Offset 240g',
             Enobrecimento: 'Laminação Fosca',
-            Extras: 'Sem Extras'
+            Extras: 'Sem Extras',
+            Valor:'100'
         });
     }
 
@@ -70,17 +71,17 @@ export class ConfigCartaoComponent implements OnInit {
             {
                 'Quantidade': 100,
                 'DiaSemana': [{ 'dia': '17', 'Semana': 'terça-feira', 'Mes': 'Jan' }],
-                'Valor': [100, 50, 30, 60]
+                'Valor': [12, 10, 35, 24]
             },
             {
                 'Quantidade': 100,
                 'DiaSemana': [{ 'dia': '18', 'Semana': 'quarta-feira', 'Mes': 'Jan' }],
-                'Valor': [100, 50, 30, 60]
+                'Valor': [92, 55, 36, 25]
             },
             {
                 'Quantidade': 100,
                 'DiaSemana': [{ 'dia': '19', 'Semana': 'quinta-feira', 'Mes': 'Jan' }],
-                'Valor': [100, 50, 30, 60]
+                'Valor': [101, 51, 31, 65]
             }
         );
 
