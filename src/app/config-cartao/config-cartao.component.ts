@@ -51,7 +51,8 @@ export class ConfigCartaoComponent implements OnInit {
             Papel: 'Offset 240g',
             Enobrecimento: 'Laminação Fosca',
             Extras: 'Sem Extras',
-            Valor:'100'
+            Valor:'100',
+            Quantidade: '10' 
         });
     }
 
