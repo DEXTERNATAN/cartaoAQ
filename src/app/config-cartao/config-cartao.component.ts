@@ -65,7 +65,7 @@ export class ConfigCartaoComponent implements OnInit {
 
         this.tblEntrega.push(
             {
-                'Quantidade': 100,
+                'Quantidade': 10,
                 'DiaSemana': [{ 'dia': '16', 'Semana': 'segunda-feira', 'Mes': 'Jan' }],
                 'Valor': [100, 50, 30, 60]
             },
@@ -75,12 +75,12 @@ export class ConfigCartaoComponent implements OnInit {
                 'Valor': [12, 10, 35, 24]
             },
             {
-                'Quantidade': 100,
+                'Quantidade': 1000,
                 'DiaSemana': [{ 'dia': '18', 'Semana': 'quarta-feira', 'Mes': 'Jan' }],
                 'Valor': [92, 55, 36, 25]
             },
             {
-                'Quantidade': 100,
+                'Quantidade': 10000,
                 'DiaSemana': [{ 'dia': '19', 'Semana': 'quinta-feira', 'Mes': 'Jan' }],
                 'Valor': [101, 51, 31, 65]
             }
@@ -125,6 +125,7 @@ export class ConfigCartaoComponent implements OnInit {
 
     save() {
         const cartaoValue = this.form.value;
+        console.log(cartaoValue, cartaoValue.Quantidade, cartaoValue.Valor);
         let description = 'Cartao de visita';
 
         for (let key of Object.keys(cartaoValue)) {
@@ -138,12 +139,12 @@ export class ConfigCartaoComponent implements OnInit {
         produto.id = id.toString();
         produto.cep = '72225-273';
         produto.previsaoEntrega = new Date();
-        produto.qtdItems = 10;
+        produto.qtdItems = cartaoValue.Quantidade;
         produto.images = [
             'assets/images/home/sprite-cart.fw.png',
           ];
         produto.payment = {
-            value: 100,
+            value: cartaoValue.Valor,
             qtdInstallment: 10,
             valueInstallment: 10
           };

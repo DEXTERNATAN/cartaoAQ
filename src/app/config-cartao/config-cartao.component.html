@@ -1,3 +1,4 @@
+{{ form.value | json }}
 <div class="col-sm-12">
   <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
     <div class="row">
@@ -274,8 +275,8 @@
               <tr *ngFor="let itens of tblEntrega">
                 <td>
                   <span style="color: #000;">
-                    <b>{{ itens. Quantidade }}</b>&nbsp;
-                    <input type="radio" value="{{ itens. Quantidade }}" formControlName="Quantidade">
+                    <b>{{ itens.Quantidade }}</b>&nbsp;
+                    <input type="radio" value="{{ itens.Quantidade }}" formControlName="Quantidade">
                     <i>un</i>
                   </span>
                 </td>
