@@ -3,7 +3,7 @@ import { Product } from './../shared/models/product.model';
 import { CartService } from './../shared/services/cart.service';
 
 import swal from 'sweetalert2';
-import { default as NProgress } from 'nprogress';
+
 
 @Component({
   selector: 'app-cart',
@@ -29,7 +29,6 @@ export class CartComponent implements OnInit {
   removeItem(produto: Product) {
     let c: any;
     c = this.cartService;
-    NProgress.start();
     swal({
       title: 'Confirmacao',
       text: 'Voce tem certeza que deseja remover este item das suas intencoes de compra?',
@@ -41,12 +40,10 @@ export class CartComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
-        NProgress.start();
         swal(
           'Excluido', 'Item removido do carrinho', 'success'
         );
         c.removeItem(produto);
-        NProgress.done();
       } else if (result.dismiss === 'cancel') {
         swal(
           'Cancelada',
@@ -55,7 +52,6 @@ export class CartComponent implements OnInit {
         );
       }
     });
-    NProgress.done();
   }
 
   total(): number {

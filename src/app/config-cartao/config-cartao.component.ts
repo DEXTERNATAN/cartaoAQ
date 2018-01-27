@@ -36,6 +36,7 @@ export class ConfigCartaoComponent implements OnInit {
     public papel: any;
     public enobrecimento: any;
     public extras: any;
+    public quantidade: any;
 
 
     constructor(
@@ -52,6 +53,7 @@ export class ConfigCartaoComponent implements OnInit {
             Enobrecimento: 'Laminação Fosca',
             Extras: 'Sem Extras',
             Valor:'100',
+            cep:'',
             Quantidade: '10' 
         });
     }
@@ -119,6 +121,10 @@ export class ConfigCartaoComponent implements OnInit {
         console.log('Vai retirar');
     }
 
+    adicionarQtd(qtd){
+       this.form.controls['Quantidade'].setValue(qtd); 
+    }
+
     exibeFrete() {
         this.tblFrete = true;
     }
@@ -137,7 +143,7 @@ export class ConfigCartaoComponent implements OnInit {
         let date = new Date();
         let id = date.getMilliseconds();
         produto.id = id.toString();
-        produto.cep = '72225-273';
+        produto.cep = cartaoValue.cep;
         produto.previsaoEntrega = new Date();
         produto.qtdItems = cartaoValue.Quantidade;
         produto.images = [
@@ -145,8 +151,8 @@ export class ConfigCartaoComponent implements OnInit {
           ];
         produto.payment = {
             value: cartaoValue.Valor,
-            qtdInstallment: 10,
-            valueInstallment: 10
+            qtdParcelas: 10,
+            valorParcela: cartaoValue.Valor / 10
           };
         
         this.cartService.addItem(produto);

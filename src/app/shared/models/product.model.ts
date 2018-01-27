@@ -8,7 +8,7 @@ export class Product {
     cep: string;
     payment: {
         value: number,
-        qtdInstallment: number,
-        valueInstallment: number
+        qtdParcelas: number,
+        valorParcela: number
     };
 }
