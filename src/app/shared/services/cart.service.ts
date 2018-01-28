@@ -9,6 +9,7 @@ import { ErrorHandler } from '../../app.errorshandler';
 @Injectable()
 export class CartService {
 
+    
     constructor() { }
 
     items: Product[] = [];
@@ -33,14 +34,16 @@ export class CartService {
     }
     totalIns(): number {
          return this.items
-        .map(item => item.payment.valueInstallment)
+        // .map(item => item.payment.valueInstallment)
+        .map(item => item.payment.value)
         .reduce((prev, value) => prev + value, 0);
     }
     installment(): number {
         return Math.max.apply(
             Math, this.items
             .map(function(prod){
-            return prod.payment.qtdInstallment;
+            // return prod.payment.qtdInstallment;
+            return prod.payment.qtdParcelas;
         }));
     }
 }
