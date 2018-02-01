@@ -1,0 +1,20 @@
+.input-forms {
+    width: 45.0em !important; 
+    height: 4.0em; 
+    background-color: white;
+    vertical-align:middle; 
+    border: 2px solid #E4E4;
+}
+
+.select-forms {
+    width: 26.0em !important; 
+    height: 4.0em; 
+    background-color: white;
+    vertical-align:middle;
+    border: 2px solid #EEE;
+    margin-right: 5px !important;
+}
+
+input[type=text] {
+    background-image: none;
+}
