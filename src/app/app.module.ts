@@ -33,6 +33,7 @@ import { CartitemComponent } from './cartitem/cartitem.component';
 /* Services do projeto */
 import { ConfigCartaoService } from './shared/services/configCartao.service';
 import { SendMailService } from './shared/services/sendmail.service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 // registerLocaleData(localePt);
 
@@ -51,7 +52,8 @@ import { SendMailService } from './shared/services/sendmail.service';
     ContratoComponent,
     ConfigCartaoComponent,
     CartComponent,
-    CartitemComponent
+    CartitemComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

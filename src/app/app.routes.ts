@@ -1,3 +1,4 @@
+import { CheckoutComponent } from './checkout/checkout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
@@ -25,6 +26,7 @@ const routesChild: Routes = [
   { path: 'contrato', component: ContratoComponent, data: { breadcrumbs: 'contrato'} },
   { path: 'sobre', component: SobreComponent, data: { breadcrumbs: 'sobre'} },
   { path: 'cart', component: CartComponent, data: { breadcrumbs: 'carrinho de compras'} },
+  { path: 'pagamentos', component: CheckoutComponent, data: { breadcrumbs: 'pagina de pagamentos'} },
   { path: 'cartoes', data: { breadcrumbs: 'Cartão de Visita'}, children: [
     { path: '', redirectTo: 'configCartao', pathMatch: 'prefix' },
     { path: ':id', component: ConfigCartaoComponent, data: { breadcrumbs: 'Configurar cartao'}  },
