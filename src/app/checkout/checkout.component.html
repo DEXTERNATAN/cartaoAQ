@@ -1,4 +1,5 @@
 <!-- CONFIGURAÇAO -->
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
 <div id="contact-page" class="container">
   <div class="row">
     <div class="col-sm-9">
@@ -13,12 +14,14 @@
             <td class="Bgbranco" align="center">
               <div class="col-lg-5" align="center">
                 <span class="text-center text-info h4">
-                  <input type="radio" style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;border: 2px solid #E4E4; "> &nbsp;Pessoa Fisica
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" class="btn-radio-pessoa" ngModel required #pFisica="ngModel">Pessoa Fisica</label>
                 </span>
               </div>
               <div class="col-lg-4" align="center">
                 <span class="text-info h4">
-                  <input type="radio" style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle; border: 2px solid #E4E4; "> &nbsp;Pessoa Juridica
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio"  class="btn-radio-pessoa" [(ngModel)]="pJuridica">Pessoa Juridica</label>
                 </span>
               </div>
             </td>
@@ -38,7 +41,7 @@
           <tr>
             <td class="Bgbranco" align="center">
               <div>
-                <input type="text"  class="form-control input-forms" id="Fone" name="fone" placeholder="Telefone">
+                <input type="text" class="form-control input-forms" id="Fone" name="fone" placeholder="Telefone">
               </div>
             </td>
           </tr>
@@ -54,30 +57,30 @@
               <!-- <label for="Sexo">Sexo</label> -->
               <div style="display: flex; width: 86%;">
 
-              <select class="form-control select-forms" id="Sexo">
-                <option value="0">Sexo</option>
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
-              </select>
-              <select  class="form-control select-forms">
-                <option>Ocupação</option>
-                <option>Academia</option>
-                <option>Arquitetura</option>
-                <option>Comunicação e Marketing</option>
-                <option>Consultoria</option>
-                <option>Designer / Fotografia</option>
-                <option>Engenharia</option>
-                <option>Estetica</option>
-                <option>Fisioterapia</option>
-                <option>Imobiliaria</option>
-                <option>Informatica</option>
-                <option>Medicina</option>
-                <option>Odontologia</option>
-                <option>Veterinaria / Pet</option>
-                <option>Outros</option>
-              </select>
-            </div>
-              
+                <select class="form-control select-forms" id="Sexo">
+                  <option value="0">Sexo</option>
+                  <option value="M">Masculino</option>
+                  <option value="F">Feminino</option>
+                </select>
+                <select class="form-control select-forms">
+                  <option>Ocupação</option>
+                  <option>Academia</option>
+                  <option>Arquitetura</option>
+                  <option>Comunicação e Marketing</option>
+                  <option>Consultoria</option>
+                  <option>Designer / Fotografia</option>
+                  <option>Engenharia</option>
+                  <option>Estetica</option>
+                  <option>Fisioterapia</option>
+                  <option>Imobiliaria</option>
+                  <option>Informatica</option>
+                  <option>Medicina</option>
+                  <option>Odontologia</option>
+                  <option>Veterinaria / Pet</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+
             </td>
           </tr>
           <tr>
@@ -335,3 +338,4 @@
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
+<!-- </form> -->

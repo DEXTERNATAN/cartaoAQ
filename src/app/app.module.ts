@@ -34,6 +34,9 @@ import { CartitemComponent } from './cartitem/cartitem.component';
 import { ConfigCartaoService } from './shared/services/configCartao.service';
 import { SendMailService } from './shared/services/sendmail.service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { PagamentoService } from './checkout/pagamento.service';
+import { VariableGlobal } from './checkout/variable.global.service';
+
 
 // registerLocaleData(localePt);
 
@@ -62,12 +65,13 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ScrollToModule.forRoot(),
     SharedModule.forRoot(),
     AppRoutingModule,
+    
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
     McBreadcrumbsModule
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy} ],
+  providers: [PagamentoService, VariableGlobal, { provide: LocationStrategy, useClass: HashLocationStrategy} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
