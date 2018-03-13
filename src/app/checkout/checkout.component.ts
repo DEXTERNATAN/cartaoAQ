@@ -14,7 +14,6 @@ export class CheckoutComponent implements OnInit {
 
   isCompleted = false;
 
-  constructor() { }
   public dados = new Dados();
   // model;
 
@@ -142,7 +141,5 @@ export class CheckoutComponent implements OnInit {
 
   }
 
-
-}
 
 }

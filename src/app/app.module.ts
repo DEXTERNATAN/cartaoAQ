@@ -34,17 +34,15 @@ import { CartitemComponent } from './cartitem/cartitem.component';
 import { ConfigCartaoService } from './shared/services/configCartao.service';
 import { SendMailService } from './shared/services/sendmail.service';
 import { CheckoutComponent } from './checkout/checkout.component';
-<<<<<<< HEAD
 import { FormWizardModule } from 'angular2-wizard';
 import { WizardCartaoaqComponent } from './wizard-cartaoaq/wizard-cartaoaq.component';
 import { WizardCartaoAQStepComponent } from './wizard-cartaoaq/wizard-cartaoaqstep.component';
 
 export * from './wizard-cartaoaq/wizard-cartaoaq.component';
 export * from './wizard-cartaoaq/wizard-cartaoaqstep.component';
-=======
+
 import { PagamentoService } from './checkout/pagamento.service';
 import { VariableGlobal } from './checkout/variable.global.service';
->>>>>>> ff7d2c8bf3ae56f21ff73bc9b45fc04f676d164b
 
 
 // registerLocaleData(localePt);
