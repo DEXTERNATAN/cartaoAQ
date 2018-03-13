@@ -1,65 +1,73 @@
-<!-- CONFIGURAÇAO -->
 <div id="contact-page" class="container">
   <div class="row">
-    <div class="col-sm-9">
-      <div class="contact-form">
-        <table width="100%" border="0" cellspacing="6" cellpadding="0" class="header-bottom  table-condensed">
-          <tr>
-            <td class="alert-success">
-              <h3 class="text-info">&nbsp;&nbsp;Dados</h3>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div class="col-lg-5" align="center">
-                <span class="text-center text-info h4">
-                  <input type="radio" style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle;border: 2px solid #E4E4; "> &nbsp;Pessoa Fisica
-                </span>
+    <div class="col-md-9">
+      <app-wizard-cartaoaq>
+        <wizard-cartaoaq-step [title]="'Dados Pessoais'"  (onNext)="onStepPersonalDataNext($event)">
+          
+          <form #emailForm="ngForm">
+            <h1>Informações pessoais</h1>
+            <p class="atm-checkout-content-text">Estamos quase lá. Informe seus dados para completarmos o cadastro. Nas próximas compras não solicitaremos os dados pessoais novamente.</p>
+            <div class="form-group">
+              <span class="text-center text-info h5">
+                <input type="radio" name="tpessoa" value="fisica"  style="width: 22px; height: 22px; background-color: white; border-radius: 50%;vertical-align:middle;border: 2px solid #E4E4; "> &nbsp;Pessoa Fisica
+              </span>
+              <span class="text-center text-info h5">
+                <input type="radio"  name="tpessoa" value="juridica"  style="width: 22px; height: 22px; background-color: white; border-radius: 50%;vertical-align:middle; border: 2px solid #E4E4; "> &nbsp;Pessoa Juridica
+              </span>
+            </div>
+            
+            <div class="form-group">
+              <label for="nome">Nome:</label>
+              <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nome" placeholder="Nome Completo"
+              required>
+              <small id="nomeHelp" class="form-text text-muted">Informe o nome completo.</small>
+            </div>
+            
+            
+            
+            
+            
+            
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <label for="phone">Telefone:</label>
+                  <input type="text" class="form-control" id="inputPhone" name="phone" aria-describedby="phone" placeholder="Telefone"
+                  required>
+                  <small id="phoneHelp" class="form-text text-muted">Informe o número do telefone.</small>
+                </div>
               </div>
-              <div class="col-lg-4" align="center">
-                <span class="text-info h4">
-                  <input type="radio" style="width: 2.0em; height: 2.0em; background-color: white; border-radius: 50%;vertical-align:middle; border: 2px solid #E4E4; "> &nbsp;Pessoa Juridica
-                </span>
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <label for="cpf">CPF:</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf" aria-describedby="cpf" placeholder="CPF"
+                  required>
+                  <small id="cpfHelp" class="form-text text-muted">Informe o número do cpf.</small>
+                </div>
+                
               </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">&nbsp;
-
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div>
-                <input type="text" class="form-control input-forms" id="nome" name="nome" placeholder="Nome Completo">
+            </div>
+            
+            
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <label for="sexo">Sexo:</label>
+                  <select  class="form-control select-forms" id="Sexo"  aria-describedby="sexo" placeholder="Sexo"
+                  required  >
+                  <option value="0">Sexo</option>
+                  <option value="M">Masculino</option>
+                  <option value="F">Feminino</option>
+                </select>
+                <small id="sexoHelp" class="form-text text-muted">Selecione acima uma das opções.</small>
               </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div>
-                <input type="text"  class="form-control input-forms" id="Fone" name="fone" placeholder="Telefone">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div>
-                <input type="text" class="form-control input-forms" id="cpf" name="cpf" placeholder="CPF">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <!-- <label for="Sexo">Sexo</label> -->
-              <div style="display: flex; width: 86%;">
-
-              <select class="form-control select-forms" id="Sexo">
-                <option value="0">Sexo</option>
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
-              </select>
-              <select  class="form-control select-forms">
+              
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group">
+                <label for="profissao">Profissão:</label>
+                <select  class="form-control select-forms"  id="profissao"  aria-describedby="profissao" placeholder="profissao"
+                required     >
                 <option>Ocupação</option>
                 <option>Academia</option>
                 <option>Arquitetura</option>
@@ -76,262 +84,277 @@
                 <option>Veterinaria / Pet</option>
                 <option>Outros</option>
               </select>
+              <small id="profissaoHelp" class="form-text text-muted">Selecione acima uma das opções.</small>
             </div>
+            
+          </div>
+        </div>
+        
+      </form>
+    </wizard-cartaoaq-step>
+    <wizard-cartaoaq-step [title]="'Endereço'" (onNext)="onStepAndressDataNext($event)">
+      
+      
+      
+      <form class="address-form-modal">
+        
+        
+        
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="receiver_name">Nome:</label>
+              <input type="text" class="form-control" id="receiver_name" name="receiver_name" aria-describedby="receiver_name" placeholder="Nome do recebedor" value="" autocomplete="on" required  >
+              <small id="receiver_nameHelp" class="form-text text-muted">Informe o nome da pessoa que vai receber a mercadoria.</small>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="zipcode">CEP:</label>
+              <input type="text" class="form-control" id="zipcode" name="zipcode" aria-describedby="zipcode" placeholder="CEP"
+              required>
+              <small id="zipcodeHelp" class="form-text text-muted">Informe o número do cep.</small>
+              <a target="_blank" class="link" href="http://www.buscacep.correios.com.br/sistemas/buscacep/BuscaCepEndereco.cfm">Não sei meu CEP*</a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="street">Rua:</label>
+              <input type="text" class="form-control" id="street" name="street" aria-describedby="street" placeholder="Endereço" value="" autocomplete="on" required  >
+              <small id="streetHelp" class="form-text text-muted">Informe o endereço de entrega da mercadoria.</small>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <label for="number">Número:</label>
+              <input type="text" class="form-control" id="number" name="number" aria-describedby="number" placeholder="Número"
+              required>
+              <small id="numbereHelp" class="form-text text-muted">Informe o número do cep.</small>
+            </div>
+            
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <label for="additional_address">Complemento:</label>
+              <input type="text" class="form-control" id="additional_address" name="additional_address" aria-describedby="additional_address" placeholder="Complemento"
+              required>
+              <small id="additional_addressHelp" class="form-text text-muted">Informe o complemento para facilitar a entrega.</small>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="neighborhood">Bairro:</label>
+              <input type="text" class="form-control" id="neighborhood" name="neighborhood" aria-describedby="neighborhood" placeholder="Bairro" value="" autocomplete="on" required  >
               
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <button class="btn btn-primary text-center">
-                SALVAR DADOS
-              </button>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="&nbsp;">&nbsp;</div>
-<div id="contact-page" class="container">
-  <div class="row">
-    <div class="col-sm-9">
-      <div class="contact-form">
-        <table width="100%" border="0" cellspacing="6" cellpadding="0" class="header-bottom  table-condensed">
-          <tr>
-            <td class="alert-success">
-              <h3 class="text-info">&nbsp;&nbsp;Selecione o Endereço</h3>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div>
-                <input type="text" id="nome" name="nome" placeholder="Nome Completo">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div>
-                <input type="text" id="nome" name="nome" placeholder="Cpf">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div>
-                <input type="text" id="nome" name="nome" placeholder="Cep">
-              </div>
-              <span class="h6">
-                <a href="www.correios.com.br">
-                  <i class="fa fa-cloud-upload"></i>&nbsp;Não sei meu cep!
-                </a>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div class="checkbox" align="center">
-                <button class="btn btn-primary text-center">
-                  SALVAR ENDEREÇO
-                </button>
-              </div>
+              <small id="neighborhoodHelp" class="form-text text-muted">Informe o bairro de entrega da mercadoria.</small>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <label for="city">Cidade:</label>
+              <input type="text" class="form-control" id="city" name="city" aria-describedby="city" placeholder="Cidade"
+              required>
+              <small id="cityeHelp" class="form-text text-muted">Informe a cidade para entrega da mercadoria.</small>
+            </div>
+            
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <label for="state">Estado:</label>
+              <input type="text" class="form-control" id="state" name="state" aria-describedby="state" placeholder="Estado"
+              required>
+              <small id="additional_stateaddressHelp" class="form-text text-muted">Informe o estado para a entrega.</small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
               <span class="h6">
                 <a href="#">
                   <i class="fa fa-plus"></i>&nbsp;Adicionar novo Endereço
                 </a>
               </span>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">&nbsp;</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="&nbsp;">&nbsp;</div>
-<div id="contact-page" class="container">
-  <div class="row">
-    <div class="col-sm-9">
+            </div>
+          </div>
+        </div>
+      </form>
+    </wizard-cartaoaq-step>
+    <wizard-cartaoaq-step [title]="'Pagamento'" (onNext)="onStepPaymentDataNext($event)">
       <div class="contact-form">
-        <table width="100%" border="0" cellspacing="6" cellpadding="0" class="header-bottom  table-condensed">
-          <tr>
-            <td class="alert-success">
-              <h3 class="text-info">&nbsp;&nbsp;Selecione a forma de pagamento</h3>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div class="form-group" align="center">
-                &nbsp;&nbsp;
-                <button class="well">
-                  <h2>Cartao de Credito&nbsp;&nbsp;
-                    <i class="fa fa-credit-card"></i>
-                  </h2>
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="text-info">&nbsp;&nbsp;Selecione a forma de pagamento</h3>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group" align="center">
+              &nbsp;&nbsp;
+              <button class="well">
+                <h2>Cartao de Credito&nbsp;&nbsp;
+                  <i class="fa fa-credit-card"></i>
+                </h2>
+              </button>
+              &nbsp;&nbsp;
+              <button class="well">
+                <h2>Boleto Bancario&nbsp;&nbsp;
+                  <i class="fa fa-bars"></i>
+                </h2>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-5">
+            <div>
+              <img src="/assets/images/home/cartao.fw.png" width="304" height="186">
+            </div>
+          </div>
+          
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="N° do Cartão" style="width:400px;font-size: 13px; border: 2px solid #E4E4;">
+            <br>
+            <input type="text" class="form-control" placeholder="Nome" style="width:400px;font-size: 13px; border: 2px solid #E4E4;">
+            <br>
+            <span>
+              <input type="text" class="form-control content2" placeholder="Mês" style="width:100px;font-size: 13px; float:left; border: 2px solid #E4E4;">
+            </span>
+            
+            <input type="text" class="form-control  content2" placeholder="Ano" style="width:100px;font-size: 13px; float:left; border: 2px solid #E4E4;">
+            
+            <span>
+              <input type="text" class="form-control  content2" placeholder="COD CCV" style="width:90px;font-size: 13px; float:none; border: 2px solid #E4E4;">
+            </span>
+          </div>
+          
+        </div>
+        <div class="row"  >
+          
+          <div class="col-sm-12"  >
+            <div class="checkbox" align="center">
+              <a href="Finalizar.html">
+                <button class="btn btn-primary text-center">
+                  FINALIZAR PAGAMENTO
                 </button>
-                &nbsp;&nbsp;
-                <button class="well">
-                  <h2>Boleto Bancario&nbsp;&nbsp;
-                    <i class="fa fa-bars"></i>
-                  </h2>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row"  >
+          
+          <div class="col-sm-12"  >
+            <span>&nbsp;&nbsp;
+              <I class="fa fa-calendar"></I>
+              &nbsp;Escolha uma data para o vencimento do seu boleto
+            </span>
+            <br>
+          </div>
+        </div>
+        <div class="row"  >
+          
+          <div class="col-sm-12"  >
+            <select style="width: 15.0em; height: 2.0em; background-color: white; vertical-align:middle; border: 2px solid #E4E4;">
+              <option>xxxxxx</option>
+              <option>xxxxxxx</option>
+              <option>xxxxxxx</option>
+              <option>xxxxxxx</option>
+              <option>xxxxxxxx</option>
+            </select>
+            <br>
+          </div>
+        </div>
+        <div class="row"  >
+          
+          <div class="col-sm-12"  >
+            <span>&nbsp;&nbsp;
+              <I class="fa fa-print"></I>
+              &nbsp;Imprima o boleto e pague no banco ou caixa eletrônico
+            </span>
+            <br>
+          </div>
+        </div>
+        <div class="row"  >
+          
+          <div class="col-sm-12"  >
+            <span>&nbsp;&nbsp;
+              <I class="fa fa-print"></I>&nbsp;&nbsp;Ou Pague pela internet utilizando o código de barras do boleto
+            </span>
+          </div>
+        </div>
+        <div class="row"  >
+          
+          <div class="col-sm-12"  >
+            <div align="center">
+              <a href="Finalizar.html">
+                <button class="btn btn-primary text-center">
+                  FINALIZAR PAGAMENTO
                 </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco">
-              <!-- DADOS DO CARTAO -->
-              <table width="97%" border="0" cellspacing="6" cellpadding="0">
-                <tr>
-                  <td width="39%">
-                    <div>
-                      <img src="/assets/images/home/cartao.fw.png" width="304" height="186">
-                    </div>
-                  </td>
-                  <td width="61%">
-                    <input type="text" class="form-control" placeholder="N° do Cartão" style="width:400px;font-size: 13px; border: 2px solid #E4E4;">
-                    <br>
-                    <input type="text" class="form-control" placeholder="Nome" style="width:400px;font-size: 13px; border: 2px solid #E4E4;">
-                    <br>
-                    <span>
-                      <input type="text" class="form-control content2" placeholder="Mês" style="width:100px;font-size: 13px; float:left; border: 2px solid #E4E4;">
-                    </span>
-
-                    <input type="text" class="form-control  content2" placeholder="Ano" style="width:100px;font-size: 13px; float:left; border: 2px solid #E4E4;">
-
-                    <span>
-                      <input type="text" class="form-control  content2" placeholder="COD CCV" style="width:90px;font-size: 13px; float:none; border: 2px solid #E4E4;">
-                    </span>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- FIM DOS DADOS DO CARTAO -->
-            </td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center"></td>
-          </tr>
-          <tr>
-            <td class="Bgbranco" align="center">
-              <div class="checkbox" align="center">
-                <a href="Finalizar.html">
-                  <button class="btn btn-primary text-center">
-                    FINALIZAR PAGAMENTO
-                  </button>
-                </a>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="&nbsp;">&nbsp;</div>
-  <div id="contact-page">
-    <div class="row">
-      <div class="col-sm-9">
-        <div class="contact-form">
-          <table width="100%" border="0" cellspacing="6" cellpadding="0" class="table-condensed">
-            <tr>
-              <td class="alert-success">
-                <h3 class="text-info">&nbsp;&nbsp;Selecione a forma de pagamento</h3>
-              </td>
-            </tr>
-            <tr>
-              <td class="Bgbranco" align="center">
-                <div class="form-group" align="center">
-                  &nbsp;&nbsp;
-                  <button class="well">
-                    <h2>Cartao de Credito&nbsp;&nbsp;
-                      <i class="fa fa-credit-card"></i>
-                    </h2>
-                  </button>
-                  &nbsp;&nbsp;
-                  <button class="well">
-                    <h2>Boleto Bancario&nbsp;&nbsp;
-                      <i class="fa fa-bars"></i>
-                    </h2>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="Bgbranco" align="left">
-                <span>&nbsp;&nbsp;
-                  <I class="fa fa-calendar"></I>
-                  &nbsp;Escolha uma data para o vencimento do seu boleto
-                </span>
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td class="Bgbranco" align="left">
-                &nbsp;&nbsp;
-                <select style="width: 15.0em; height: 2.0em; background-color: white; vertical-align:middle; border: 2px solid #E4E4;">
-                  <option>xxxxxx</option>
-                  <option>xxxxxxx</option>
-                  <option>xxxxxxx</option>
-                  <option>xxxxxxx</option>
-                  <option>xxxxxxxx</option>
-                </select>
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td class="Bgbranco" align="left">
-                <span>&nbsp;&nbsp;
-                  <I class="fa fa-print"></I>
-                  &nbsp;Imprima o boleto e pague no banco ou caixa eletrônico
-                </span>
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td class="Bgbranco" align="left">
-                <span>&nbsp;&nbsp;
-                  <I class="fa fa-print"></I>&nbsp;&nbsp;Ou Pague pela internet utilizando o código de barras do boleto
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="Bgbranco" align="center">
-                <div align="center">
-                  <a href="Finalizar.html">
-                    <button class="btn btn-primary text-center">
-                      FINALIZAR PAGAMENTO
-                    </button>
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="Bgbranco" align="center">&nbsp;</td>
-            </tr>
-          </table>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      
+    </wizard-cartaoaq-step>
+    <wizard-cartaoaq-step [title]="'Status'" (onComplete)="onComplete($event)">
+      <div [ngSwitch]="isCompleted">
+        <div class="row" >
+          <div class="col-sm-12"  >
+            <div *ngSwitchDefault>
+              <h1>Detalhe do seu Pedido</h1>
+              
+              <div id="resumo" class="resumo-compra" align="center">
+                <br>
+                <span>(1 item)</span>
+                <br>
+                <span> Total: </span>
+                <br>
+                <span class="text-success">R$ 62,99</span>
+                <br>
+                <br>
+                <span>Previsão de entrega:</span>
+              </div>
+              <div id="apDiv2" class="Bgbranco" align="center">
+                <h2>Resumo</h2>
+              </div>
+            </div>
+            
+          </div>
+          <div *ngSwitchCase="true">
+            <h2>Temos a certeza de que fez uma ótima escolha! Aguarde a confirmação do pagamento.
+              <br/> Náo se preocupe, agora é por nossa conta, o(a) manterei informado(a) sobre o andamento do pedido.</h2>
+            </div>
+          </div>
+        </div>
+      </wizard-cartaoaq-step>
+    </app-wizard-cartaoaq>
   </div>
-  <div id="apDiv1" class="navbar-default" align="center">
-    <br>
-    <span>(1 item)</span>
-    <br>
-    <span> Total: </span>
-    <br>
-    <span class="text-success">R$ 62,99</span>
-    <br>
-    <br>
-    <span>Previsão de entrega:</span>
-  </div>
-  <div id="apDiv2" class="Bgbranco" align="center">
-    <h2>Resumo</h2>
-  </div>
-  <div>&nbsp;</div>
-  <div>&nbsp;</div>
-  <div>&nbsp;</div>
+</div>
+</div>
+
+<div id="apDiv1" class="navbar-default" align="center">
+  <br>
+  <span>(1 item)</span>
+  <br>
+  <span> Total: </span>
+  <br>
+  <span class="text-success">R$ 62,99</span>
+  <br>
+  <br>
+  <span>Previsão de entrega:</span>
+</div>
+<div id="apDiv2" class="Bgbranco" align="center">
+  <h2>Resumo</h2>
+</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>

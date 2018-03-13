@@ -34,6 +34,13 @@ import { CartitemComponent } from './cartitem/cartitem.component';
 import { ConfigCartaoService } from './shared/services/configCartao.service';
 import { SendMailService } from './shared/services/sendmail.service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FormWizardModule } from 'angular2-wizard';
+import { WizardCartaoaqComponent } from './wizard-cartaoaq/wizard-cartaoaq.component';
+import { WizardCartaoAQStepComponent } from './wizard-cartaoaq/wizard-cartaoaqstep.component';
+
+export * from './wizard-cartaoaq/wizard-cartaoaq.component';
+export * from './wizard-cartaoaq/wizard-cartaoaqstep.component';
+
 
 // registerLocaleData(localePt);
 
@@ -53,7 +60,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ConfigCartaoComponent,
     CartComponent,
     CartitemComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    WizardCartaoaqComponent,
+    WizardCartaoAQStepComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +74,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    McBreadcrumbsModule
+    McBreadcrumbsModule,
+    FormWizardModule
+  ],
+  exports: [
+    WizardCartaoaqComponent,
+    WizardCartaoAQStepComponent
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy} ],
   bootstrap: [AppComponent]
