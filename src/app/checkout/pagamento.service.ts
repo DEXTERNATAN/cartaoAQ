@@ -18,7 +18,7 @@ export class PagamentoService {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.get('http://www.suaApi.com.br/getIdSession', options)
+        return this.http.post('//ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=suporte%40lojamodelo.com.br&token=57BE455F4EC148E5A54D9BB91C5AC12C', options)
             .map(res => res.json());
     }
 
