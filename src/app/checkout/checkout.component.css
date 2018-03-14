@@ -19,5 +19,21 @@ input[type=text] {
     background-image: none;
 }
 
+
+span.text-center.text-info.h5{
+    border: 2px solid;
+    padding: 9px;
+    border-radius: 5px;
+    
+    margin-left:10px;
+}
+
+span.text-center.text-info.h5:hover, span.text-center.text-info input:hover{
+    border-color: #006ee3;
+    background-color: #006ee3;
+    color: white;
+    cursor:pointer;
+}
+
 .btn-radio-pessoa {
 }

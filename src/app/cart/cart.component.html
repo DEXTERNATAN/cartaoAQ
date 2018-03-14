@@ -90,9 +90,9 @@
         <span class="text-success">{{total() | currency: 'BRL': true}}</span><br>
         
         <span>Configurações Adicionais</span><br>
-        <button class="btn btn-primary">
+        <a class="btn btn-primary" [routerLink]="['/pagamentos']"   >
           CONTINUAR
-        </button>
+        </a>
       </div>
       <div id="apDiv2" class="Bgbranco" align="center">
         <h2>Resumo</h2>

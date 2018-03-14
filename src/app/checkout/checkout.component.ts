@@ -12,6 +12,8 @@ declare var PagSeguroDirectPayment: any;
 })
 export class CheckoutComponent implements OnInit {
 
+  isCompleted = false;
+
   public dados = new Dados();
   // model;
 
@@ -30,6 +32,20 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  onStepPersonalDataNext(event){
+
+  }
+  onStepAndressDataNext(event){
+
+  }
+  onStepPaymentDataNext(event){
+    
+  }
+
+  onComplete(event){
+    this.isCompleted = true;
   }
 
   //BUSCA A BANDEIRA DO CARTÃO (EX: VISA, MASTERCARD ETC...) E DEPOIS BUSCA AS PARCELAS;
@@ -125,9 +141,6 @@ export class CheckoutComponent implements OnInit {
     }
 
   }
-
-
-}
 
 
 }

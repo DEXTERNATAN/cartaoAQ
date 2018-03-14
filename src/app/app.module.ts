@@ -34,6 +34,13 @@ import { CartitemComponent } from './cartitem/cartitem.component';
 import { ConfigCartaoService } from './shared/services/configCartao.service';
 import { SendMailService } from './shared/services/sendmail.service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FormWizardModule } from 'angular2-wizard';
+import { WizardCartaoaqComponent } from './wizard-cartaoaq/wizard-cartaoaq.component';
+import { WizardCartaoAQStepComponent } from './wizard-cartaoaq/wizard-cartaoaqstep.component';
+
+export * from './wizard-cartaoaq/wizard-cartaoaq.component';
+export * from './wizard-cartaoaq/wizard-cartaoaqstep.component';
+
 import { PagamentoService } from './checkout/pagamento.service';
 import { VariableGlobal } from './checkout/variable.global.service';
 
@@ -56,7 +63,9 @@ import { VariableGlobal } from './checkout/variable.global.service';
     ConfigCartaoComponent,
     CartComponent,
     CartitemComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    WizardCartaoaqComponent,
+    WizardCartaoAQStepComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +78,12 @@ import { VariableGlobal } from './checkout/variable.global.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    McBreadcrumbsModule
+    McBreadcrumbsModule,
+    FormWizardModule
+  ],
+  exports: [
+    WizardCartaoaqComponent,
+    WizardCartaoAQStepComponent
   ],
   providers: [PagamentoService, VariableGlobal, { provide: LocationStrategy, useClass: HashLocationStrategy} ],
   bootstrap: [AppComponent]
