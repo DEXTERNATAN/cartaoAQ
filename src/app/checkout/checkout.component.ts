@@ -29,6 +29,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
   //BUSCA A BANDEIRA DO CARTÃO (EX: VISA, MASTERCARD ETC...) E DEPOIS BUSCA AS PARCELAS;
