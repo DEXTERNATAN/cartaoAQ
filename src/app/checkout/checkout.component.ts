@@ -89,6 +89,13 @@ export class CheckoutComponent implements OnInit {
   //AO CLICAR NO BOTÃO PAGAR
   onSubmit(f) {
 
+    debugger
+
+    this.pagamentoService.startSession().subscribe(result => { 
+      PagSeguroDirectPayment.setSessionId(result); 
+      console.log(result);
+    });
+    
     //BUSCA O HASH DO COMPRADOR JUNTO A API DO PAGSEGURO
     this.dados.hashComprador = PagSeguroDirectPayment.getSenderHash();
 
@@ -124,6 +131,11 @@ export class CheckoutComponent implements OnInit {
 
   //CARREGA O JAVASCRIPT DO PAGSEGURO (A EXPLICAÇÃO ESTA FUNÇÃO ESTÁ LOGO ABAIXO)
   carregaJavascriptPagseguro() {
+    //BUSCA UM ID DE SESSÃO NO SERVIDOR (ESTE ID É GERADO PELA API DO PAGSEGURO QUE VOCÊ DEVE CONSUMIR USANDO SEU SERVIDOR. LER DOCUMENTAÇÃO PARA SABER COMO GERAR)
+    this.pagamentoService.startSession().subscribe(result => { 
+      PagSeguroDirectPayment.setSessionId(result); 
+      console.log(result);
+    });
 
     if (!this.variableGlobal.getStatusScript()) {
       //SEJA O JAVASCRIPT NO CABEÇÁRIO DA PÁGINA
@@ -131,12 +143,11 @@ export class CheckoutComponent implements OnInit {
         let script: HTMLScriptElement = document.createElement('script');
         script.addEventListener('load', r => resolve());
         script.src = 'https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js';
+        
         document.head.appendChild(script);
       });
 
-      //BUSCA UM ID DE SESSÃO NO SERVIDOR (ESTE ID É GERADO PELA API DO PAGSEGURO QUE VOCÊ DEVE CONSUMIR USANDO SEU SERVIDOR. LER DOCUMENTAÇÃO PARA SABER COMO GERAR)
-      this.pagamentoService.startSession().subscribe(result => PagSeguroDirectPayment.setSessionId(result));
-
+      
       this.variableGlobal.setStatusScript(true);
     }
 

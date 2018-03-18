@@ -14,11 +14,11 @@ export class PagamentoService {
 
 
     public startSession() {
-
+        debugger
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.post('//ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=suporte%40lojamodelo.com.br&token=57BE455F4EC148E5A54D9BB91C5AC12C', options)
+        return this.http.post('https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=natansl@gmail.com&token=B0705C835BDF468CB104722E921A4F1F', options)
             .map(res => res.json());
     }
 

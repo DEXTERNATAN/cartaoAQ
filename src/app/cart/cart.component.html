@@ -1,6 +1,4 @@
 <div class="cart-component" >
-  
-  
   <div class="row">
     <div class="col-md-10">
       <div class="row header-cart"> 
@@ -67,11 +65,19 @@
               
             <a [routerLink]="['/cartoes/configCartao']">Continuar Comprando</a>
             </span><br>
-          <a [routerLink]="['/pagamentos']">
+          <!-- <a [routerLink]="['/pagamentos']">
             <button class="btn btn-primary text-center">
               CONTINUAR
             </button>
-          </a>
+          </a> -->
+          
+          <button class="btn btn-primary text-center" (click)="efetivarCompra()">Comprar com PagSeguro</button>
+          
+          <!-- 
+          <button  class="btn btn-primary text-center" onclick="PagSeguroLightbox('93BEFCE84B4BEAFEE4AF0F9B12F38712')">
+            Pagar com lightbox
+          </button> -->
+       
         </div>
       </div>
       
