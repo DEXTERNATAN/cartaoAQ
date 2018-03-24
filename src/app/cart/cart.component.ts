@@ -40,6 +40,7 @@ export class CartComponent implements OnInit {
         this.headers = new Headers({
             'Content-Type': 'application/x-www-form-urlencoded',
             'Access-Control-Allow-Origin': '*',
+            "Access-Control-Allow-Credentials": true,
             'Access-Control-Allow-Headers': 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json',
             'Access-Control-Allow-Methods': 'POST, GET, PATCH, DELETE, OPTIONS'
         });
