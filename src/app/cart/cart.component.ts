@@ -77,7 +77,11 @@ export class CartComponent implements OnInit {
         });
 
         this.http
-            .post('https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/', body.toString(), this.getDefaultRequestOptions())
+             // Desenvolvimento
+            // .post('https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/', body.toString(), this.getDefaultRequestOptions())
+
+            // Produção
+            .post('https://ws.pagseguro.uol.com.br/v2/checkout/', body.toString(), this.getDefaultRequestOptions())
             .subscribe(
                 response => {
                     let vXml: string = response['_body'].substring(108, 76);
