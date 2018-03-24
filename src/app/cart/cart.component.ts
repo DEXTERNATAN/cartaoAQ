@@ -38,8 +38,10 @@ export class CartComponent implements OnInit {
         
         /* service */
         this.headers = new Headers({
-            'Content-Type': 'application/x-www-form-urlencoded'
-
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+            'Access-Control-Allow-Methods': 'POST, GET, PATCH, DELETE, OPTIONS'
         });
 
 
